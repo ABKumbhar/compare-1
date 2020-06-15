@@ -1,0 +1,32 @@
+
+li{
+    list-style-type: none;
+}
+i{
+    padding: 5px;
+}
+#footer{
+    margin-top: 50px;
+    margin-bottom:0px;
+    background-color: rgb(59, 61, 61);
+    color:white;
+    max-height: max-content;
+}
+ul{
+    padding: 0px;
+}
+.copyright{
+    margin-top: 30px;
+}
+#container {
+    margin-top:0px;
+}
+.carousel-item img{
+    height:400px
+}
+.width{
+width:inherit
+}
+h3 strong{
+    margin-top: 50px;
+}

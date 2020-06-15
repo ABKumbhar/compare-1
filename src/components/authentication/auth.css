@@ -1,0 +1,23 @@
+.form-control:focus{
+    box-shadow: none;
+    border:1px solid white;
+
+}
+#jumbo{
+background:url("./log-images/loginimg.jpg") center center no-repeat;
+background-size: 100% 55%;
+height: 500px;
+
+}
+#button{
+    margin-top: 10px;
+    width:25%;
+    border-radius:15px ;
+    margin-left: 40%;
+}
+.form{
+    padding:40px;
+}
+.container{
+   margin-top: 100px; 
+}
