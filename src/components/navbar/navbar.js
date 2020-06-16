@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import SignIn from './in';
 import SignOut from './out';
+import './navbar.css'
 import {Navbar,Nav,NavDropdown,Form,FormControl,Button} from 'react-bootstrap';
 class Top extends Component {
     render() {
         return (
     <div>
           
-         <Navbar bg="light" variant="light"expand="lg" >
+         <Navbar bg="light" variant="light" expand="lg"className="navbar" >
             <Navbar.Brand href="/">Bonjour Techies</Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">

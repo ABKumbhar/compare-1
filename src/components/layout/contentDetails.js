@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios';
-import {Container,Jumbotron,Image} from 'react-bootstrap'
+import {Container,Jumbotron} from 'react-bootstrap'
 class Details extends Component {
     state={ 
     data:[]

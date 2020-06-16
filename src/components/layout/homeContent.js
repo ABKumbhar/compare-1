@@ -32,12 +32,12 @@ class HomeContent extends Component {
                 </h3>
                 <p>
                     Look through your favourite category to find the top and best choice.
-                    <br/>Compare the list and decide with no hussle.
+                    <br/><span>Compare the list and decide with no hussle.</span>
                 </p>
                 </div>
             </Jumbotron>
                 <Container className="top-cont">
-                    <h1>Top Lists for you! </h1>  
+                    <h1>Lists for you!</h1>  
                        <hr/>
                        <Row>
                            <Col >

@@ -30,3 +30,9 @@ width:inherit
 h3 strong{
     margin-top: 50px;
 }
+/* footer content responsive */
+@media screen and (max-width:428px){
+    #footer-text{
+        margin:0px 30px;
+    }
+}
