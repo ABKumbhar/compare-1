@@ -12,7 +12,7 @@ class HomeContent extends Component {
         results:[]
     }
     componentDidMount(){
-        axios.get("https://aniket1999.pythonanywhere.com/en/division/")
+        axios.get(`https://aniket1999.pythonanywhere.com/en/division/`)
          .then(data=>{
             //  console.log(data);
              this.setState({
@@ -43,12 +43,12 @@ class HomeContent extends Component {
                            <Col >
                            {results.map(result =>{
                                return(
-                                <Link to={'/en/company/:id ' + result.id} key={result.id}>
+                                <Link to={'/en/company/ ' + result.id} key={result.id}>
                                     <Card className="text-left" key={result.id}>
-                                        <Card.Header as ="h3">Top 10 best {result.name}sites</Card.Header>
+                                        <Card.Header as ="h3">Top {result.name} </Card.Header>
                                         <Card.Body>
                                             {/* <Card.Title>Special title treatment</Card.Title> */}
-                                            <Card.Subtitle className="mb-2 text-muted">{result.subhead}</Card.Subtitle>
+                                            <Card.Subtitle className="mb-2 text-muted">Category:{result.subhead}</Card.Subtitle>
                                             <Card.Text>
                                              {result.headline}
                                             </Card.Text>
