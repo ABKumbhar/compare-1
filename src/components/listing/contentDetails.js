@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import axios from 'axios';
 import './contentDetails.css'
 import FeatureListing from './featureListing'
-import {Container,Jumbotron,Image,Spinner, Row,Col,Alert, Button} from 'react-bootstrap'
+import {Container,Jumbotron,Image,Spinner, Row,Col,Alert} from 'react-bootstrap'
 class Details extends Component {
     state={ 
     loading:false,
@@ -14,11 +14,10 @@ class Details extends Component {
         console.log(slug)
         axios.get(`https://aniket1999.pythonanywhere.com/en-gb/division/${slug}/company/`)
         .then(res=>{
-            console.log(res);
+            // console.log(res);
             this.setState({
                 loading:true,
                 data:res.data,
-                
             });
             console.log(this.state)
         });
@@ -36,44 +35,44 @@ class Details extends Component {
                     <Row>
                     <Col lg={10}>
                             
-                            <h1>{detail.name}</h1>
+                            <h1 id="name">{detail.name}</h1>
                             <hr/>
-                            <span>About us</span>
-                            <p>
+                            <span id="aboutus">About us</span>
+                            <p id="headline">
                                 {detail.headline}
                             </p>
                             <hr/>
-                            <h3>Here's why you should check their site!</h3>
-                            <h4>Best For:</h4>
-                            <p>
+                            <h3 id="h3">Here's why you should visit their site!</h3>
+                            {/* <h4>Best For:</h4> */}
+                            <p id="bestfor">
                                 {detail.bestfor}
                             </p>
                             <hr/>
                             <h3>Features to note!</h3>
-                            <ul>
-                                {/* {details.featuresub} */}
-                                <FeatureListing features={details.featuresub}/>
-                            </ul>
+                             
+                             <FeatureListing features={detail.featuresub}/>
                    </Col>
-                   <Col lg={2}>
-                     
+                   <Col lg={2} >
+                    <div id="style-box">
                      <h4>Review: {detail.review}</h4>
                      <a href={detail.url}>Visit Site</a>
+                     </div>
                    </Col>
                    </Row>
                    <Row>
                    
                    <Alert variant="success">
-                        Click here to view the{' '}
-                        <Alert.Link href={detail.url}>website</Alert.Link>. .
+                        <Alert.Link href={detail.url} id="style-alert">Visit website for more!</Alert.Link>. .
                     </Alert>
+                
                    </Row>
+                   <hr/>
                    </div>
                    )
                    
                })}
            </Container>
-           
+        
            )
     }
 }

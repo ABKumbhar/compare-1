@@ -6,6 +6,7 @@ import {Link } from 'react-router-dom'
 import Home from './home';
 import './homeContent.css';
 import axios from 'axios';
+import Categories from '../Categories/categories'
 
 class HomeContent extends Component {
     state={
@@ -22,7 +23,8 @@ class HomeContent extends Component {
          });
      }
     render() {
-        const results = this.state.results
+        const results = this.state.results;
+        
         return (
             <div>
             <Jumbotron className="top-jumbo"fluid>
@@ -36,6 +38,7 @@ class HomeContent extends Component {
                 </p>
                 </div>
             </Jumbotron>
+            <Categories/>
                 <Container className="top-cont">
                     <h1>Lists for you!</h1>  
                        <hr/>

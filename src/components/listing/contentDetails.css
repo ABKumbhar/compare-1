@@ -1,0 +1,36 @@
+#name{
+    font-weight: bold;
+    text-decoration: underline;
+    margin-top:15px;
+    margin-left:0px;
+    color:rgb(95, 92, 92);
+    text-transform: uppercase;
+}
+#aboutus,.h3{
+    color:rgb(132, 132, 236);
+    font-weight:bold;
+    margin-top:5px;
+}
+#headline{
+}
+#bestfor{
+
+}
+
+#style-box{
+    margin-top: 100%;
+    padding:20px;
+    border: 1px solid grey;
+
+}
+#style-box h4{
+    color:brown
+}
+.alert{
+ width:100%;
+ margin: 5px;
+ padding: 25px;
+}
+#style-alert{
+    margin-left: 40%;
+}
