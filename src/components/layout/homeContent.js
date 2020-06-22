@@ -1,11 +1,11 @@
 // This contains the code and styling of top jumbotron anf the contents of the cards
 
 import React, { Component } from 'react';
-import {Row,Col,Container, Card,Button,Jumbotron} from 'react-bootstrap';
+import {Row,Col,Container, Card,Button,Jumbotron,Image} from 'react-bootstrap';
 import {Link } from 'react-router-dom'
 import Home from './home';
 import './homeContent.css';
-import axios from'axios';
+import axios from 'axios';
 
 class HomeContent extends Component {
     state={
@@ -32,34 +32,44 @@ class HomeContent extends Component {
                 </h3>
                 <p>
                     Look through your favourite category to find the top and best choice.
-                    <br/><span>Compare the list and decide with no hussle.</span>
+                    <br/><span>Compare the list and decide with no daze.</span>
                 </p>
                 </div>
             </Jumbotron>
                 <Container className="top-cont">
                     <h1>Lists for you!</h1>  
                        <hr/>
-                       <Row>
-                           <Col >
-                           {results.map(result =>{
+                           
+                           {results && results.map(result =>{
                                return(
-                                <Link to={'/en/company/ ' + result.id} key={result.id}>
-                                    <Card className="text-left" key={result.id}>
-                                        <Card.Header as ="h3">Top {result.name} </Card.Header>
+                                <Link to={'/en/company/' + result.path} key={result.id}>
+                                    
+                                        <Card className="text-left" key={result.id}>
+                                        <Row>
+                                        <Col lg={9}>
+                                        <Card.Header as ="h3" dangerouslySetInnerHTML={ {__html: result.name} }></Card.Header>
                                         <Card.Body>
                                             {/* <Card.Title>Special title treatment</Card.Title> */}
-                                            <Card.Subtitle className="mb-2 text-muted">Category:{result.subhead}</Card.Subtitle>
-                                            <Card.Text>
-                                             {result.headline}
+                                            <Card.Subtitle className="mb-2 text-muted">Category:{result.category}</Card.Subtitle>
+                                            <Card.Text
+                                            dangerouslySetInnerHTML={ {__html: result.headline} }>
                                             </Card.Text>
-                                            <Button variant="success" id="details-btn" className="text-center">Go somewhere</Button>
-                                        </Card.Body>
-                                    </Card>
-                                </Link>
+                                            <Button variant="success" id="details-btn" className="text-center">View details</Button>
+                                         </Card.Body>
+                                         </Col>
+                                         <Col lg={3}>
+                                           <div>
+                                               <Image src={result.logo} className="image"/>
+                                           </div>
+                                         </Col>
+                                         </Row>
+                                         </Card>
+                                                                        
+                                   </Link>
                                )
                            })}
-                           </Col>
-                           </Row><hr/>                   
+                           
+                           <hr/>                   
                </Container> 
                <Home/>
             </div>
