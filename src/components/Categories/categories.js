@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import axios from 'axios';
-import { ListGroup } from 'react-bootstrap';
+import { Card } from 'react-bootstrap';
+import './categories.css'
+import CategoryList from './CategoryList'
 class Categories extends Component {
     state={
         categories:[]
@@ -17,15 +19,10 @@ class Categories extends Component {
     render() {
         return (
             <div>
-                {this.state.categories && this.state.categories.map(category=>{
-                    return(
-                        <ListGroup horizontal>
-                        <ListGroup.Item>{category.name}</ListGroup.Item>
-                      </ListGroup>
-                    )
-                })}
-            
-             
+              <Card id="card-style">
+                     <Card.Body as="h4">Categories</Card.Body>
+              </Card>
+               <CategoryList categories={this.state.categories}/>
             </div>
         )
     }

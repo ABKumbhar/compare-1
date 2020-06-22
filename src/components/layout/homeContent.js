@@ -38,10 +38,17 @@ class HomeContent extends Component {
                 </p>
                 </div>
             </Jumbotron>
-            <Categories/>
+       
                 <Container className="top-cont">
-                    <h1>Lists for you!</h1>  
+                   <Row>
+                       <Col lg={3} id="style-category">
+                       <Categories/>
+                       </Col>
+                       <Col>
+                       <h1>Lists for you!</h1>  
                        <hr/>
+                 
+                    
                            
                            {results && results.map(result =>{
                                return(
@@ -49,6 +56,7 @@ class HomeContent extends Component {
                                     
                                         <Card className="text-left" key={result.id}>
                                         <Row>
+                                        
                                         <Col lg={9}>
                                         <Card.Header as ="h3" dangerouslySetInnerHTML={ {__html: result.name} }></Card.Header>
                                         <Card.Body>
@@ -57,7 +65,7 @@ class HomeContent extends Component {
                                             <Card.Text
                                             dangerouslySetInnerHTML={ {__html: result.headline} }>
                                             </Card.Text>
-                                            <Button variant="success" id="details-btn" className="text-center">View details</Button>
+                                            <Button variant="secondary" id="details-btn" className="text-center">View details</Button>
                                          </Card.Body>
                                          </Col>
                                          <Col lg={3}>
@@ -71,6 +79,8 @@ class HomeContent extends Component {
                                    </Link>
                                )
                            })}
+                                 </Col>
+                   </Row>
                            
                            <hr/>                   
                </Container> 
