@@ -1,13 +1,21 @@
+.top-detail{
+    margin-top:50px ;
+}
 #name{
     font-weight: bold;
     text-decoration: underline;
-    margin-top:15px;
+    margin-top:50px;
     margin-left:0px;
     color:rgb(95, 92, 92);
     text-transform: uppercase;
 }
-#aboutus,.h3{
-    color:rgb(132, 132, 236);
+#aboutus{
+    color:rgba(19, 122, 45, 0.904);
+    font-weight:bold;
+    margin-top:5px;
+}
+#h3{
+    color:rgba(19, 122, 45, 0.904);
     font-weight:bold;
     margin-top:5px;
 }
@@ -18,7 +26,7 @@
 }
 
 #style-box{
-    margin-top: 100%;
+    margin-top: 50%;
     padding:20px;
     border: 1px solid grey;
 

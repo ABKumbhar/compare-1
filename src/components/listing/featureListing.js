@@ -5,14 +5,7 @@ import {Table} from 'react-bootstrap'
         <div>
             {features && features.map(feature=>{
                 return(
-                // <ul key={feature.id}>
-                //         <li>
-                //             <h5>{feature.feature}</h5>
-                //             <p>
-                //                 {feature.text}
-                //             </p>
-                //         </li>
-                //  </ul>
+            
                 <Table striped bordered key={feature.id}>
                 <thead>
                   <tr>

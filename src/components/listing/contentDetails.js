@@ -29,14 +29,23 @@ class Details extends Component {
                { this.state.loading && details && details.map(detail =>{
                    return(
                     <div key={detail.id}>
-                    <Jumbotron>
-                        <Image src={detail.logo}/>
-                    </Jumbotron>
+                    <div className="top-detail">
+                    <Row>
+                        <Col>
+                            <h2 id="name">{detail.name}</h2>
+                            
+                        </Col>
+                        <Col>
+                         <Jumbotron>
+                            <Image src={detail.logo}/>
+                         </Jumbotron>
+                        </Col>
+                    </Row>
+              </div>
                     <Row>
                     <Col lg={10}>
                             
-                            <h1 id="name">{detail.name}</h1>
-                            <hr/>
+                            
                             <span id="aboutus">About us</span>
                             <p id="headline">
                                 {detail.headline}
@@ -48,7 +57,7 @@ class Details extends Component {
                                 {detail.bestfor}
                             </p>
                             <hr/>
-                            <h3>Features to note!</h3>
+                            <h3 id="h3">Features to note!</h3>
                              
                              <FeatureListing features={detail.featuresub}/>
                    </Col>
