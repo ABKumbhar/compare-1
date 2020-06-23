@@ -1,6 +1,6 @@
 
 import React, { Component } from 'react';
-import {Row,Col,Container, Card,Button,Jumbotron,Image} from 'react-bootstrap';
+import {Row,Col,Container, Card,Button,Jumbotron,Image,} from 'react-bootstrap';
 import {Link } from 'react-router-dom'
 import Home from '../layout/home';
 import '../layout/homeContent.css';
@@ -22,8 +22,7 @@ function SearchComponent(props) {
                        <hr/>
                
                     
-                           
-                           {props.location.aboutProps ? props.location.aboutProps.map(result =>{
+                           {props.location.aboutProps && props.location.aboutProps.length ? props.location.aboutProps.map(result =>{
                                return(
                                 <Link to={'/en/company/' + result.path} key={result.id}>
                                     
@@ -52,8 +51,9 @@ function SearchComponent(props) {
                                    </Link>
                                )
                            })
-                        : <div>No results found</div>
-                        }
+                        : <div>Oops, No results were found!</div>
+                           }
+                         
                                  </Col>
                    </Row>
                            

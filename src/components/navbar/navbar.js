@@ -21,7 +21,6 @@ function Top() {
         .then((res)=> 
            {console.log(res)
         setItem(res.data)
-        setToggle(1)  
     }
          
         )
