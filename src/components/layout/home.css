@@ -1,23 +1,11 @@
+.jumbotron {
+    /* padding: 2rem 1rem; */
+    margin-bottom: 2rem;
+    background-color: #e9ecef;
+    border-radius: .3rem;
+}
 
-li{
-    list-style-type: none;
-}
-i{
-    padding: 5px;
-}
-#footer{
-    margin-top: 50px;
-    margin-bottom:0px;
-    background-color: rgb(59, 61, 61);
-    color:white;
-    max-height: max-content;
-}
-ul{
-    padding: 0px;
-}
-.copyright{
-    margin-top: 30px;
-}
+
 #container {
     margin-top:0px;
 }
@@ -28,11 +16,14 @@ ul{
 width:inherit
 }
 h3 strong{
-    margin-top: 50px;
+
+    line-height: 30px;
 }
-/* footer content responsive */
-@media screen and (max-width:428px){
-    #footer-text{
-        margin:0px 30px;
-    }
+.style{
+    margin-top: 80px;
+    line-height:50px;
+    color:rgb(240, 109, 109)
+}
+.style span{
+    color:black
 }

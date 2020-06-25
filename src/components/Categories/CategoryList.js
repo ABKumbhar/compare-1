@@ -1,5 +1,5 @@
 import React from 'react'
-import { Card,Row,Col,Image } from 'react-bootstrap';
+import {Card,Row,Col,Image } from 'react-bootstrap';
 import {Link } from 'react-router-dom'
 import {motion} from 'framer-motion';
 import './categories.css'
@@ -13,33 +13,34 @@ const ImgVariants = {
 const CategoryList=({categories})=> {
     return (
         <div>
+          <Row className="ml-5">
             { categories.map(category =>{
                 return(
-                  <Row key={category.id}>
-                  <Col>
-                    <Link to={'/category/' +category.path}>
-                      <Card>
-                        <Row>
-                          <Col lg={8}>
-                        <Card.Body id="style-body">{category.name}</Card.Body>
-                        <hr/>
-                        </Col>
-                        <Col lg={4}>
-                           <motion.div
+                  <Col lg={4}>
+                  <Link to={'/category/' +category.path}>
+                       <Card >
+                         <Row>
+                           <Col xs={10}lg={8}>
+                         <Card.Body id="style-body">{category.name}</Card.Body>
+                         
+                         </Col>
+                        <Col xs={2}lg={4}>
+                            <motion.div
                            variants={ImgVariants}
                            initial="hidden"
-                           animate="visible"
-                           >
-                            <Image src={category.logo} alt="" id="image"/>
-                            </motion.div>
-                        </Col>
-                        </Row>
-                      </Card>
+                          animate="visible"
+                        >
+                             <Image src={category.logo} alt="" id="image"/>
+                             </motion.div>
+                         </Col>
+                         </Row>
+                       </Card>
                       </Link>
                   </Col>
-              </Row>
+             
                 )
             })}
+            </Row>
             
         </div>
     )

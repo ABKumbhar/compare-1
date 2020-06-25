@@ -2,9 +2,46 @@
     height:50%;
     width:50%;
     margin-left: -10px;
-    margin-top: 0px;
+    margin-top: 40%
 }
 #style-body{
+    font-weight: bold;
     color:black;
-    padding:0px;
+    padding:50px;
+    text-transform: uppercase;
+    text-align: center;
+    background: linear-gradient(40deg,rgb(235, 160, 160),rgb(212, 202, 202),rgb(199, 199, 241));
+    border: 1px solid white;
+}
+#style-body:hover{
+    background: white;
+    border: 1px solid rgb(216, 211, 211);
+
+}
+ #card-style .card-body{
+     margin-left: 40%;
+     border-radius: 10px;
+  font-weight: bold;
+  text-decoration: underline;
+  color:rgb(240, 109, 109);
+  width:20%;
+  border:1px solid rgb(240, 109, 109)
+}
+.open{
+    display:none;
+}
+/* Responsive design */
+@media screen and (min-width:320px) and (max-width:424px){
+    #image{
+        width:150%;
+        margin-left: -30px;
+        margin-top: -10px;
+    }
+    #style-body{
+        color:black;
+        padding:0px;
+    }
+    .category{
+        margin-left: 20px;
+    }
 }

@@ -1,3 +1,15 @@
 #brand{
-    margin-left: 250px;
+    margin-left: 0px;
+}
+
+@media screen and (max-width:425px){
+    .input-style{
+        margin-top:20px ;
+        margin-left: 50px;
+    }
+    #button-style{
+        position: relative;
+        right:0%;
+        top:-40px;
+    }
 }
