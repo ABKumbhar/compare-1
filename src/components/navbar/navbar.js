@@ -42,8 +42,8 @@ function Top() {
                     <Navbar.Collapse id="basic-navbar-nav" >
                    
                 <Form inline  className="ml-auto">
-                    <Input type="text" placeholder="Look for the best...." className="mr-sm-2" onChange={e => setbuttn(e.target.value)} />
-                    <Link to={{pathname:'/search', aboutProps:item}}><Button variant="danger"><i className="fas fa-search"></i></Button></Link>
+                    <Input type="text" placeholder="Look for the best...." className="mr-sm-2 input-style" onChange={e => setbuttn(e.target.value)} />
+                    <Link to={{pathname:'/search', aboutProps:item}}><Button variant="danger" id="button-style"><i className="fas fa-search"></i></Button></Link>
     
                         <SignIn/>
                         <SignOut/>
