@@ -6,6 +6,7 @@ import HomeContent from './components/layout/homeContent'
 import Details from './components/listing/contentDetails'
 import CategoryDetails from './components/Categories/CategoryDetails'
 import SearchComponent from './components/navbar/SearchComponent';
+
 function App() {
   return (
     <div className="App">
@@ -22,6 +23,7 @@ function App() {
           <Route path="/category/:slug" component={CategoryDetails}/>
         </Switch>
       </Router>
+
     </div>
   );
 }
