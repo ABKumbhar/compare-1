@@ -64,14 +64,14 @@ class Details extends Component {
                    <Col lg={2} >
                     <div id="style-box">
                      <h4>Review: {detail.review}</h4>
-                     <a target='_blank' href={detail.url}>Visit Site</a>
+                     <a target='_blank' rel="noopener noreferrer" href={detail.url}>Visit Site</a>
                      </div>
                    </Col>
                    </Row>
                    <Row>
                    
                    <Alert variant="success">
-                        <Alert.Link target='_blank' href={detail.url} id="style-alert">Visit website for more!</Alert.Link>. .
+                        <Alert.Link target='_blank'rel="noopener noreferrer" href={detail.url} id="style-alert">Visit website for more!</Alert.Link>. .
                     </Alert>
                 
                    </Row>
