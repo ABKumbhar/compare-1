@@ -2,6 +2,7 @@
 body{
     font-family:'Montserrat', sans-serif; 
 }
+   
 
 .jumbotron{
       margin-bottom:0px;
@@ -39,7 +40,7 @@ body{
 }
 .top-cont{
     position: relative;
-    top:-80px
+    top:-120px
 }
 .top-cont #lists{
    margin-top: 30px;
@@ -72,7 +73,6 @@ text-decoration: underline;
 #details-btn{
     margin-top:2px;
     background-color: rgb(193, 214, 212);
-    
     border:1px solid rgb(193, 214, 212);
     width:100%;
     color:black;
@@ -134,28 +134,7 @@ ul{
         margin:0px 30px;
     }
 }
-/* resonsive design */
-/* @media screen and (max-width:1440px){
-    .top-jumbo{
-        background: url("./images/bg.jpg") center center no-repeat;
-        background-size: 100% 100%;
-        height: 500px;
-        position: relative;
-    }
-    .text{
-        position:absolute;
-        top:100px;
-        left:200px; */
-        /* background: rgb(80, 78, 78); Fallback color */
-        /* background: rgba(59, 59, 59, 0.5); Black background with 0.5 opacity */
-        /* color: #ffffff; Grey text */
-        /* width:50%; Full width */
-        /* height:50%; */
-        /* padding: 60px; */
-    /* -webkit-backdrop-filter: blur(9px); */
-      /* backdrop-filter: blur(9px);  */
-    /* } */
-/* } */
+
 
 @media screen and (max-width:1196px){
     .top-jumbo{
@@ -274,6 +253,7 @@ ul{
         background: url("./images/bg.jpg") center center no-repeat;
         background-size: 100% 100%;
         height: 400px;
+        width:100%;
         position: relative;
     }
     .text{
@@ -284,19 +264,27 @@ ul{
         background: rgba(59, 59, 59, 0.5); /* Black background with 0.5 opacity */
         color: #ffffff; /* Grey text */
         width: 75%; /* Full width */
-        height:62%;
-        padding: 20px;
-     -webkit-backdrop-filter: blur(9px);
-      backdrop-filter: blur(9px); 
+        height:51%;
+        padding: 15px;
+       -webkit-backdrop-filter: blur(9px);
+        backdrop-filter: blur(9px); 
     }
     h3{
-        font-size:23px
+        font-size:20px
     }
     .text p{
         line-height: 22px;
-        margin-top: 20px;
+        margin-top: 10px;
     }
     .text p span{
         display:none;
+    }
+    #footer{
+        padding:20px;
+        margin-top: 0px;
+        margin-bottom:0px;
+        background-color: rgb(59, 61, 61);
+        color:white;
+        max-height: max-content;
     }
 }

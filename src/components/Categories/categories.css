@@ -1,9 +1,10 @@
 #image{
     height:50%;
-    width:80%;
-    margin-left: 0px;
+    width:200%;
+    margin-left: 10px;
     margin-top: 0%
 }
+
 #style-body{
     height:70%;
     font-weight: bold;
@@ -14,8 +15,9 @@
     border: 1px solid white;
 }
 #style-body .card-body{
-    margin-top: -15px;
+    margin-top: -20px;
     font-size: larger;
+    margin-left: -25px;
     overflow-wrap: normal;
 }
 #style-body:hover{
@@ -24,29 +26,160 @@
 
 }
  #card-style .card-body{
-    margin-top: -2%;
-    margin-left: 80%;
+    margin-top: -3%;
+    margin-left: 85%;
   border-radius: 10px;
   font-weight: bold;
-  padding:10px;
+  padding:4px;
   text-decoration: underline;
   color:rgb(240, 109, 109);
-  width:20%;
+  width:15%;
   border:1px solid rgb(240, 109, 109)
+}
+.style-choose{
+    text-decoration: underline;
+    text-decoration-color: rgb(116, 122, 122);
 }
 
 /* Responsive design */
-@media screen and (min-width:320px) and (max-width:424px){
+@media screen and (min-width:320px) and (max-width:425px){
     #image{
-        width:150%;
+        width:130%;
         margin-left: -30px;
-        margin-top: -10px;
+        margin-top: 5px;
     }
     #style-body{
         color:black;
-        padding:0px;
+        padding:10px;
     }
     .category{
         margin-left: 20px;
+    }
+    #card-style .card-body{
+     margin-top: -3%;
+     margin-left: 50%;
+      border-radius: 10px;
+      font-weight: bold;
+      padding:0px;
+      text-decoration: underline;
+      color:rgb(240, 109, 109);
+      width:50%;
+      border:1px solid rgb(240, 109, 109)
+    }
+}
+@media screen and (min-width:426px) and (max-width:767px){
+    #image{
+        width:80%;
+        margin-left: 0px;
+        margin-top: 3px;
+    }
+    #style-body{
+        color:black;
+        padding:10px;
+        margin-left:20px
+       
+    }
+    .category{
+        margin-left: 10px;
+    }
+    #card-style .card-body{
+      margin-top: -3%;
+      margin-left: 70%;
+      border-radius: 10px;
+      font-weight: bold;
+      padding:0px;
+      text-decoration: underline;
+      color:rgb(240, 109, 109);
+      width:30%;
+      border:1px solid rgb(240, 109, 109)
+    }
+    #style-body .card-body{
+        margin-top: -10px;
+        font-size: larger;
+        margin-left: 25px;
+        overflow-wrap: normal;
+    }
+}
+@media screen and (min-width:768px) and (max-width:991px){
+    #image{
+        width:50%;
+        margin-left:20px;
+        margin-top: 5px;
+    }
+    #style-body{
+        color:black;
+        padding:20px;
+    }
+    .category{
+        margin-left: 30px;
+    }
+    #card-style .card-body{
+      margin-top: -3%;
+      margin-left: 80%;
+      border-radius: 10px;
+      font-weight: bold;
+      padding:0px;
+      text-decoration: underline;
+      color:rgb(240, 109, 109);
+      width:20%;
+      border:1px solid rgb(240, 109, 109)
+    }
+    #style-body .card-body{
+        margin-top: -10px;
+        font-size: large;
+        margin-left: -25px;
+        overflow-wrap: normal;
+    }
+    #style-body{
+        height:70%;
+        font-weight: bold;
+        color:black;
+        padding:25px;
+        text-transform: uppercase;
+        background: linear-gradient(40deg,rgb(235, 160, 160),rgb(212, 202, 202),rgb(199, 199, 241));
+        border: 1px solid white;
+    }
+    #style-body:hover{
+        background: white;
+        border: 1px solid rgb(216, 211, 211);
+    
+    }
+}
+@media screen and (min-width:992px){
+    #image{
+        width:150%;
+        margin-left:0px;
+        margin-top: 12px;
+    }
+    #style-body .card-body{
+        margin-top: -10px;
+        font-size: large;
+        margin-left: -25px;
+        overflow-wrap: normal;
+    }
+    #style-body{
+        height:70%;
+        font-weight: bold;
+        color:black;
+        padding:20px;
+        text-transform: uppercase;
+        background: linear-gradient(40deg,rgb(235, 160, 160),rgb(212, 202, 202),rgb(199, 199, 241));
+        border: 1px solid white;
+    }
+}
+@media screen and (min-width:1200px){
+    #image{
+        width:150%;
+        margin-left:-10px;
+        margin-top: 0px;
+    }
+    #style-body{
+        height:70%;
+        font-weight: bold;
+        color:black;
+        padding:30px;
+        text-transform: uppercase;
+        background: linear-gradient(40deg,rgb(235, 160, 160),rgb(212, 202, 202),rgb(199, 199, 241));
+        border: 1px solid white;
     }
 }

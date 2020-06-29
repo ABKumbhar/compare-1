@@ -3,9 +3,7 @@ import {Row,Col,Container, Card,Button,Jumbotron,Image} from 'react-bootstrap';
 import {Link } from 'react-router-dom'
 import Home from './home';
 import './homeContent.css';
-import {motion} from 'framer-motion';
 import axios from 'axios';
-import ShowMoreText from 'react-show-more-text';
 import Categories from '../Categories/categories';
 import Blogs from '../Blogs/blogs';
 
@@ -14,7 +12,7 @@ class HomeContent extends Component {
         results:[]
     }
     componentDidMount(){
-        axios.get(`https://aniket1999.pythonanywhere.com/en/division/`)
+        axios.get(`https://aniket1999.pythonanywhere.com/en/division/trending/`)
          .then(data=>{
             //  console.log(data);
              this.setState({
@@ -22,19 +20,6 @@ class HomeContent extends Component {
              })
              console.log(this.state)
          });
-     }
-     arrowVariants={
-         hidden:{x:250},
-         visible:{
-             x:800,
-             transition:{
-                 duration:1,
-                 yoyo:Infinity
-             }
-         }
-     }
-     executeOnClick(isExpanded) {
-        console.log(isExpanded);
      }
     render() {
         const results = this.state.results;
@@ -44,34 +29,12 @@ class HomeContent extends Component {
             <div>
                 
             <Jumbotron fluid>
-            
-            <Home/>
-            {/* <Container>
-                <p className="text-center" id="best">For the best blogs!</p>
-            <motion.div
-             variants={this.arrowVariants}
-             initial="hidden"
-             animate="visible"
-            >
-                <i className="style-arrow fa fa-arrow-right" aria-hidden="true"></i>
-                </motion.div>
-                </Container> */}
+              <Home/>
             </Jumbotron>
-               {/* <Jumbotron className="top-jumbo">
-                <div className="text">
-                <h3>
-                    <strong>Find Your Top Option Amongst The Best</strong>
-                </h3>
-                <p>
-                    Look through your favourite category to find the top and best choice.
-                    <br/><span>Compare the list and decide with no daze.</span>
-                </p>
-                </div>
-                </Jumbotron> */}
            
                 
                 <Container className="top-cont">
-                  <Row>
+                  <Row >
                     <Col>
                        <Categories/>
                     </Col>
@@ -92,26 +55,17 @@ class HomeContent extends Component {
                                         <Card.Body>
                                             {/* <Card.Title>Special title treatment</Card.Title> */}
                                             <Card.Subtitle className="mb-2 text-muted">Category:{result.category}</Card.Subtitle>
-                                            {/* <ShowMoreText
-                                                
-                                                lines={3}
-                                                more=''
-                                                onClick={this.executeOnClick}
-                                                expanded={false}
-                                                width={500}
-                                            > */}
-                                            <div className="sidebar-box">
+                                             <div className="sidebar-box">
                                             <Card.Text
-                                            dangerouslySetInnerHTML={ {__html: result.headline} } id="a">
+                                            dangerouslySetInnerHTML={ {__html: result.subhead} } id="a">
                                             </Card.Text>
-                                            {/* </ShowMoreText> */}
                                             <Button  id="details-btn" className="text-center"><strong>View More</strong></Button>
                                             </div>
                                          </Card.Body>
                                          </Col>
                                          <Col sm={3}>
                                            <div>
-                                               <Image src={result.logo} className="image"/>
+                                               <Image src={`https://aniket1999.pythonanywhere.com/${result.logo}`} className="image"/>
                                            </div>
                                          </Col>
                                          </Row>

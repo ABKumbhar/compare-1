@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import axios from 'axios';
 import './contentDetails.css'
 import FeatureListing from './featureListing'
-import {Container,Jumbotron,Image,Spinner, Row,Col,Alert} from 'react-bootstrap'
+import {Container,Jumbotron,Image, Row,Col,Alert} from 'react-bootstrap'
 class Details extends Component {
     state={ 
     loading:false,

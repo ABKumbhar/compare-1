@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios';
 import { Card } from 'react-bootstrap';
-import './categories.css'
-import {motion} from 'framer-motion'
+import './categories.css';
 import CategoryTrendingList from './staticCategories';
 import CategoryNontrendingList from './CategoryList';
 
@@ -34,7 +33,7 @@ class Categories extends Component {
         const categories= this.state.categories;
         return (
             <span>
-                <h2 className="text-center mb-5">Choose from top categories.</h2>
+                <h2 className="text-center mb-5 style-choose">Choose from top categories.</h2>
                <CategoryTrendingList categories={categories}/>
                {this.state.isToggle 
                       ?  <CategoryNontrendingList categories={this.state.categories}/>
@@ -42,16 +41,24 @@ class Categories extends Component {
                      }
                 <Card id="card-style">
                   <div>
-                     <Card.Body as="h4" onClick={this.handleClick} className="text-center">View More 
+                      
                      {this.state.isToggle
                      ? 
-                         <i className="fas fa-angle-up"></i>
-                     :    <i className="fas fa-angle-down"></i>
-                     }
+                         
+                         <Card.Body as="h5" onClick={this.handleClick} className="text-center">View Less
+                          <i className="fas fa-angle-up"></i>
+                          </Card.Body>                     
+
+
+                     :    
+                          <Card.Body as="h5" onClick={this.handleClick} className="text-center">View More
+                           <i className="fas fa-angle-down"></i>
+                           </Card.Body>                     
+                    }
                     
                    
                      
-                     </Card.Body>
+                    
                      </div>
                      </Card> 
                        
