@@ -6,7 +6,8 @@ import './homeContent.css';
 import {motion} from 'framer-motion';
 import axios from 'axios';
 import ShowMoreText from 'react-show-more-text';
-import Categories from '../Categories/categories'
+import Categories from '../Categories/categories';
+import Blogs from '../Blogs/blogs';
 
 class HomeContent extends Component {
     state={
@@ -18,7 +19,7 @@ class HomeContent extends Component {
             //  console.log(data);
              this.setState({
                 results:data.data
-             });
+             })
              console.log(this.state)
          });
      }
@@ -70,20 +71,16 @@ class HomeContent extends Component {
            
                 
                 <Container className="top-cont">
-                    <Row>
-                    <Col id="style-category">
+                  <Row>
+                    <Col>
                        <Categories/>
-                       </Col>
+                    </Col>
                     </Row>
                    <Row id="lists">
-                       {/*  */}
-                       <Col>
+                       <Col lg={9}>
                        <h1>Lists for you!</h1>  
                        <hr/>
-                 
-                    
-                           
-                           {results && results.map(result =>{
+                          {results && results.map(result =>{
                                return(
                                 <Link to={'/en/company/' + result.path} key={result.id}>
                                     
@@ -123,6 +120,9 @@ class HomeContent extends Component {
                                    </Link>
                                )
                            })}
+                                 </Col>
+                                 <Col lg={3}>
+                                   <Blogs/>
                                  </Col>
                    </Row>
                            

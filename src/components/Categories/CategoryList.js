@@ -10,39 +10,46 @@ const ImgVariants = {
     transition:{duration:1,yoyo:Infinity}
   }
 }
-const CategoryList=({categories})=> {
-    return (
-        <div>
-          <Row className="ml-5">
-            { categories.map(category =>{
-                return(
-                  <Col lg={4}>
+
+
+const CategoryNontrendingList=({categories})=>{
+  return (
+      <Row >
+        { categories && categories.map(category =>{
+          if(!category.trending){
+            return(
+               
+                 
+                  <Col lg={4} key={category.id}>
                   <Link to={'/category/' +category.path}>
-                       <Card >
-                         <Row>
-                           <Col xs={10}lg={8}>
-                         <Card.Body id="style-body">{category.name}</Card.Body>
-                         
-                         </Col>
-                        <Col xs={2}lg={4}>
-                            <motion.div
-                           variants={ImgVariants}
-                           initial="hidden"
-                          animate="visible"
+                  
+                   <Card id="style-body">
+                     <Row>
+                       <Col xs={10}lg={8}>
+                       <Card.Body >{category.name}</Card.Body>
+                     
+                     </Col>
+                    <Col xs={2}lg={4}>
+                        <motion.div
+                        variants={ImgVariants}
+                        initial="hidden"
+                        animate="visible"
                         >
-                             <Image src={category.logo} alt="" id="image"/>
-                             </motion.div>
-                         </Col>
-                         </Row>
-                       </Card>
-                      </Link>
-                  </Col>
-             
-                )
-            })}
-            </Row>
-            
-        </div>
-    )
+                         <Image src={category.logo} alt="" id="image"/>
+                         </motion.div>
+                     </Col>
+                     </Row>
+                   </Card>
+                  </Link>
+              </Col>
+            )
+            }
+     
+         }
+      )}
+        </Row>
+        
+
+)
 }
-export default CategoryList
+export default CategoryNontrendingList;

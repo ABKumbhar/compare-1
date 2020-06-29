@@ -3,7 +3,10 @@ import axios from 'axios';
 import { Card } from 'react-bootstrap';
 import './categories.css'
 import {motion} from 'framer-motion'
-import CategoryList from './CategoryList'
+import CategoryTrendingList from './staticCategories';
+import CategoryNontrendingList from './CategoryList';
+
+
 class Categories extends Component {
     state={
         categories:[],
@@ -18,48 +21,41 @@ class Categories extends Component {
     componentDidMount(){
         axios.get(`https://aniket1999.pythonanywhere.com/en/category/`)
          .then(res=>{
-             console.log(res)
+            //  console.log(res)
              this.setState({
-                 categories:res.data
+                 categories:res.data,
              })
+             console.log(this.state)
          });
         }
-        textVariants={
-                hidden:{scale:1},
-                visible:{
-                  scale:1.1,
-                  transition:{duration:1,yoyo:Infinity}
-                }
-               
-        }
+        
          
     render() {
+        const categories= this.state.categories;
         return (
-            <div>
-             
-              <Card id="card-style">
-                  <motion.div
-                   variants={this.textVariants}
-                   initial="hidden"
-                   animate="visible">
-                     <Card.Body as="h4" onClick={this.handleClick} className="text-center">Categories 
+            <span>
+                <h2 className="text-center mb-5">Choose from top categories.</h2>
+               <CategoryTrendingList categories={categories}/>
+               {this.state.isToggle 
+                      ?  <CategoryNontrendingList categories={this.state.categories}/>
+                      : null 
+                     }
+                <Card id="card-style">
+                  <div>
+                     <Card.Body as="h4" onClick={this.handleClick} className="text-center">View More 
                      {this.state.isToggle
-                     ?  <i class="fas fa-angle-down"></i>
-                     :    <i class="fas fa-angle-right"></i>
+                     ? 
+                         <i className="fas fa-angle-up"></i>
+                     :    <i className="fas fa-angle-down"></i>
                      }
                     
                    
                      
                      </Card.Body>
-                     </motion.div>
-              </Card>
-              {this.state.isToggle 
-              ?  <CategoryList categories={this.state.categories}/>
-              : null 
-              }
-              
-              
-            </div>
+                     </div>
+                     </Card> 
+                       
+            </span>
         )
     }
 }

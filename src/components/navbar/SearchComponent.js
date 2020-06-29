@@ -14,9 +14,6 @@ function SearchComponent(props) {
        
                 <Container className="top-cont">
                    <Row>
-                       <Col lg={3} id="style-category">
-                       
-                       </Col>
                        <Col>
                        <h1>Searched results</h1>  
                        <hr/>
