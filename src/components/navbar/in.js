@@ -3,7 +3,7 @@ import {Nav} from 'react-bootstrap';
 function SignIn() {
     return (
         <div>
-            <Nav.Link href="/signin">Sign in</Nav.Link>
+            <Nav.Link href="/register">Register/Sign in</Nav.Link>
         
         </div>
     )

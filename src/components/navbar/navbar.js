@@ -96,11 +96,11 @@ function Top() {
                 <Form inline  className="ml-auto">
                 <Input type="text" list="cars" placeholder="Look for the best...." className="mr-sm-2 input-style" onChange={e => setbuttn(e.target.value)}/>
                     <datalist id="cars">
-                        {division.map((value) => {return(
+                        {buttn && division.map((value) => {return(
 
                             <option>{value.name}</option>
                         )})}
-                        {category.map((value) => {return(
+                        {buttn && category.map((value) => {return(
 
                        <option>{value.name}</option>
                         )})}
