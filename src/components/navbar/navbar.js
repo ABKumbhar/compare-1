@@ -5,7 +5,7 @@ import SignOut from './out';
 import './navbar.css'
 import {Navbar,Form,FormControl,Button, NavItem} from 'react-bootstrap';
 
-  
+import { logout } from '../../actions/auth';
 import {Input,Select} from 'reactstrap'
 import SearchComponent from './SearchComponent';
 import {Link } from 'react-router-dom'
@@ -13,9 +13,11 @@ import { navigate } from "@reach/router"
 import HomeContent from '../layout/homeContent'
 import axios from 'axios'
 //import Select from 'react-select';
+import { connect } from 'react-redux';
 
 //import {DropdownInput} from 'react-dropdown-input';
-function Top() {
+
+function Top(props) {
    
 
           const [buttn,setbuttn] = useState('')
@@ -96,11 +98,11 @@ function Top() {
                 <Form inline  className="ml-auto">
                 <Input type="text" list="cars" placeholder="Look for the best...." className="mr-sm-2 input-style" onChange={e => setbuttn(e.target.value)}/>
                     <datalist id="cars">
-                        {division.map((value) => {return(
+                        {buttn && division.map((value) => {return(
 
                             <option>{value.name}</option>
                         )})}
-                        {category.map((value) => {return(
+                        {buttn && category.map((value) => {return(
 
                        <option>{value.name}</option>
                         )})}
@@ -111,7 +113,6 @@ function Top() {
            
 
                         <SignIn/>
-                        <SignOut/>
                 </Form>
             </Navbar.Collapse>
       
@@ -122,4 +123,8 @@ function Top() {
         )
     
 }
-export default Top;
+const mapStateToProps = (state) => ({
+    auth: state.auth,
+  });
+  
+export default connect(mapStateToProps, { logout })(Top);
