@@ -1,4 +1,10 @@
+#style-auth .nav-link{
+    display: inline-block;
+}
 
+#style-auth strong{
+    padding-left: 10px;
+}
 @media screen and (max-width:428px){
     .navbar{
         padding:20px;
@@ -22,6 +28,9 @@
     }
     .style-holder{
         margin-left: 50px;
+    }
+    .style-reg{
+        margin-left:140%;
     }
    
     
@@ -51,6 +60,13 @@
     .style-holder{
         margin-left: 50px;
     }
+    #style-auth{
+        margin-top: 0px;
+    }
+    .style-reg{
+        margin-left:100%;
+    }
+   
    
     
 }
@@ -73,11 +89,17 @@
         width:250px;
     }
     #button-style{
-        margin-top:-80px;
+        margin-top:-79px;
         margin-left: -1px;
     }
     .style-holder{
         margin-left: 50px;
+    }
+    #style-auth{
+        margin-top: -20px;
+    }
+    .style-reg{
+        margin-left: 80%;
     }
    
     

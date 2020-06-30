@@ -37,6 +37,7 @@
   border:1px solid rgb(240, 109, 109)
 }
 .style-choose{
+    margin-top: 100px;
     text-decoration: underline;
     text-decoration-color: rgb(116, 122, 122);
 }
