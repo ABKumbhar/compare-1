@@ -33,7 +33,7 @@ class Categories extends Component {
         const categories= this.state.categories;
         return (
             <span>
-                <h2 className="text-center mb-5 style-choose">Choose from top categories.</h2>
+            <h2 className="text-center mb-5 style-choose">Choose from top categories.</h2>
                <CategoryTrendingList categories={categories}/>
                {this.state.isToggle 
                       ?  <CategoryNontrendingList categories={this.state.categories}/>

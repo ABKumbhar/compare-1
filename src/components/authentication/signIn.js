@@ -6,15 +6,15 @@ class SigninForm extends Component {
     render() {
          return(
             <div>
-                <Container>
+                <Container className="signin-container">
                     <Row>
                         <Col lg={4}>
-                    <div id="jumbo"></div>
+                          <div id="jumbo"></div>
                         </Col>
                         <Col lg={8}>
                   <Form className="form"> 
                     <Row>
-                        <Col>
+                        <Col xs={12} lg={6}>
                         <Form.Label>First Name</Form.Label>
                         <Form.Control placeholder="First name" required id="style-form"/>
                         </Col>

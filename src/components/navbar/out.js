@@ -4,7 +4,7 @@ import './navbar.css'
 function SignOut() {
     return (
         <div>
-            <Nav.Link href="">Sign Out</Nav.Link>
+            <Nav.Link id="style-link"href="">Sign Out</Nav.Link>
         </div>
     )
 }

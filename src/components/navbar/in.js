@@ -1,9 +1,10 @@
 import React from 'react'
 import {Nav} from 'react-bootstrap';
+import './navbar.css'
 function SignIn() {
     return (
         <div>
-            <Nav.Link href="/signin">Sign in</Nav.Link>
+            <Nav.Link id="style-link"href="/signin">Sign Up</Nav.Link>
         
         </div>
     )

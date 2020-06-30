@@ -19,20 +19,21 @@
     font-weight:bold;
     margin-top:5px;
 }
-#headline{
-}
-#bestfor{
 
-}
 
 #style-box{
-    margin-top: 50%;
-    padding:20px;
+    padding: 10px;
+    margin-top: 0%;
+    border-radius: 70px;
+    box-sizing: border-box;
     border: 1px solid grey;
+    text-align: center;
 
 }
-#style-box h4{
-    color:brown
+#style-box h4,#style-box a{
+    color:rgba(85, 9, 15, 0.973);
+    font-weight: bolder;
+    text-transform: uppercase;
 }
 .alert{
  width:100%;
@@ -41,4 +42,9 @@
 }
 #style-alert{
     margin-left: 40%;
+}
+.detail-image{
+    margin-top: 0px;
+    margin-left: 30%;
+    width:50%;
 }

@@ -8,6 +8,7 @@ import './blogs.css'
             if(!blog.trending){
             return(
                 <div key={blog.id}>
+                <a href="">
                 <Row>
                     <Col xs={5} lg={4}>
                     <div>
@@ -19,6 +20,7 @@ import './blogs.css'
                     </Col>
                 </Row>  
                 <hr/>
+                </a>
                 </div>
                 
             )

@@ -18,7 +18,7 @@ import axios from 'axios'
 function Top() {
    
 
-          const [buttn,setbuttn] = useState('')
+    const [buttn,setbuttn] = useState('')
     const [item, setItem] = useState([])
     const [division, setDivision] = useState([])
     const [category, setcategory] = useState([])
@@ -86,15 +86,11 @@ function Top() {
         return (
     <div>
           
-         <Navbar bg="light" variant="light" expand="lg"className="navbar" >
+         <Navbar bg="light" variant="light" className="navbar" >
             <Navbar.Brand href="/" id="brand">Bonjour Techies</Navbar.Brand>
-                <Navbar.Toggle aria-controls="basic-navbar-nav"/>
-                    <Navbar.Collapse id="basic-navbar-nav" >
-                    <NavItem>                  
-            </NavItem>
 
-                <Form inline  className="ml-auto">
-                <Input type="text" list="cars" placeholder="Look for the best...." className="mr-sm-2 input-style" onChange={e => setbuttn(e.target.value)}/>
+                <Form inline  className="ml-auto input-style">
+                <Input type="text" list="cars" placeholder="Look for the best...." className="mr-sm-2 style-holder" onChange={e => setbuttn(e.target.value)}/>
                     <datalist id="cars">
                         {division.map((value) => {return(
 
@@ -113,7 +109,7 @@ function Top() {
                         <SignIn/>
                         <SignOut/>
                 </Form>
-            </Navbar.Collapse>
+    
       
         </Navbar>
         

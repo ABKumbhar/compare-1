@@ -3,7 +3,9 @@ import {Row,Col,Container, Card,Button,Jumbotron,Image} from 'react-bootstrap';
 import {Link } from 'react-router-dom'
 import Home from './home';
 import './homeContent.css';
+
 import axios from 'axios';
+
 import Categories from '../Categories/categories';
 import Blogs from '../Blogs/blogs';
 
@@ -21,6 +23,7 @@ class HomeContent extends Component {
              console.log(this.state)
          });
      }
+   
     render() {
         const results = this.state.results;
         
@@ -41,17 +44,18 @@ class HomeContent extends Component {
                     </Row>
                    <Row id="lists">
                        <Col lg={9}>
-                       <h1>Lists for you!</h1>  
-                       <hr/>
+                       <h3>Trending today...</h3> 
                           {results && results.map(result =>{
                                return(
                                 <Link to={'/en/company/' + result.path} key={result.id}>
-                                    
+                                         
                                         <Card className="text-left" key={result.id}>
+                                        <hr></hr>
                                         <Row>
                                         
                                         <Col sm={9}>
-                                        <Card.Header as ="h3" dangerouslySetInnerHTML={ {__html: result.name} }></Card.Header>
+                                      
+                                        <Card.Header as ="h2" className="style-header" dangerouslySetInnerHTML={ {__html: result.name} }></Card.Header>
                                         <Card.Body>
                                             {/* <Card.Title>Special title treatment</Card.Title> */}
                                             <Card.Subtitle className="mb-2 text-muted">Category:{result.category}</Card.Subtitle>

@@ -21,3 +21,20 @@ height: 500px;
 .container{
    margin-top: 100px; 
 }
+@media screen and (max-width:425px){
+    .signin-container{
+        margin-top: 0px; 
+     }
+     #button{
+        margin-top: 10px;
+        width:50%;
+        border-radius:15px ;
+        margin-left: 20%;
+    }
+    .form{
+        padding:20px;
+    }
+    #jumbo{
+        height:300px;
+    }
+}

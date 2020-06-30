@@ -21,7 +21,7 @@ class Blogs extends Component {
             <div>
               
               <div className="blog-card">
-              <h4 className="top-blogs">Top Blogs</h4>
+              <h4 className="top-blogs">Must reads</h4>
                  <BlogNonTrendingList blogs={blogs}/>
                </div>
             </div>

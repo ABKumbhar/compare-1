@@ -12,7 +12,7 @@ function SearchComponent(props) {
         return (
             <div>
        
-                <Container className="top-cont">
+                <Container>
                    <Row>
                        <Col>
                        <h1>Searched results</h1>  

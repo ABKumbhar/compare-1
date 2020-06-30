@@ -60,14 +60,22 @@ h2,h1{
     cursor:pointer;
     text-decoration: none;
 }
+.style-header{
+    background: -webkit-linear-gradient(#eee, rgb(211, 55, 55));
+    background-clip: initial;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 .card-header{
+    text-decoration: underline;
     background-color:white ;
     color:red;
     font-weight:600;
+    margin-top: 0px;
+    margin-bottom: 3px;
 }
- .card-header:hover{
-text-decoration: underline;
-} 
+
+
 
 
 #details-btn{
