@@ -37,13 +37,13 @@ class Details extends Component {
                {introDetails && introDetails.map(intro=>{
                    return(
                        <div>
-                    <h1 id="name">{intro.name}</h1>
+                    <h1 id="name" dangerouslySetInnerHTML={ {__html:   intro.name} }></h1>
                     <span id="aboutus">What is it?</span>
-                        <p id="headline">
-                             {intro.headline}
+                        <p id="headline" dangerouslySetInnerHTML={ {__html:   intro.headline} }>
+                           
                         </p>
-                        <p>
-                            {intro.bestfor}
+                        <p dangerouslySetInnerHTML={ {__html:   intro.bestfor} }>
+                            {/* {intro.bestfor} */}
                         </p>
                         <hr/>
                         </div>
@@ -56,12 +56,12 @@ class Details extends Component {
                     <div className="top-detail">
                     <Row>
                         <Col lg={8}>
-                            <h3 id="name">{detail.name}</h3>
+                            <h3 id="name" dangerouslySetInnerHTML={ {__html:  detail.name} }></h3>
                             <hr/>
                             <span id="aboutus">About us</span>
                            <ShowMoreText
                                     /* Default options */
-                                    lines={10}
+                                    lines={6}
                                     more='Show more'
                                     less='Show less'
                                     anchorClass=''
@@ -69,8 +69,8 @@ class Details extends Component {
                                     expanded={false}
                                     width={700}
                                 >
-                             <p id="headline">
-                                {detail.bestfor}
+                             <p id="headline" dangerouslySetInnerHTML={ {__html:  detail.bestfor} }>
+                                
                             </p>
                                 </ShowMoreText>
                             <hr/>
@@ -93,8 +93,8 @@ class Details extends Component {
                           
                             <h3 id="h3">Here's why you should visit their site!</h3>
                             {/* <h4>Best For:</h4> */}
-                            <p id="bestfor">
-                                {detail.headline}
+                            <p id="bestfor" dangerouslySetInnerHTML={ {__html:  detail.headline} }>
+                                
                             </p>
                             <hr/>
                             <h3 id="h3">Features to note!</h3>
