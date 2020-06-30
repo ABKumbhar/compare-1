@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Component} from 'react';
 import {BrowserRouter as Router,Route,Switch,Redirect} from'react-router-dom';
 import Top from './components/navbar/navbar'; 
 import Register from './components/authentication/Register'
@@ -8,27 +8,34 @@ import Details from './components/listing/contentDetails'
 import CategoryDetails from './components/Categories/CategoryDetails'
 import SearchComponent from './components/navbar/SearchComponent';
 import { Provider } from 'react-redux';
+import {Provider as AlertProvider} from 'react-alert';
 import store from './store';
 import { loadUser } from './actions/auth';
 import {useEffect} from 'react'
+import AlertTemplate from 'react-alert-template-basic';
+
+import Alerts from './components/Alerts'
 
 
-function App() {
-useEffect(() => {
-  
-  return () => {
-  
+
+ 
+  class App extends Component {
+    componentDidMount() {
       store.dispatch(loadUser());
-
-  }
-}, [])
+    }
+  
+render(){const alertOptions = {
+  timeout: 3000,
+  position: 'top center',
+};
   return (
 
     <div className="App">
             <Provider store={store}>
-
+         <AlertProvider template={AlertTemplate} {...alertOptions}>
       <Router>
         <Top/>
+        <Alerts/>
         <Switch>
           <Route path="/signout" />
           <Route exact path ="/" component={HomeContent}/>
@@ -42,10 +49,11 @@ useEffect(() => {
           <Route path="/category/:slug" component={CategoryDetails}/>
         </Switch>
       </Router>
+      </AlertProvider>
       </Provider>
 
     </div>
   );
-}
+}}
 
 export default App;

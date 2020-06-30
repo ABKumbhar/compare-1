@@ -1,8 +1,11 @@
 import React, { Component } from 'react'
 import {Form,Row,Col,Container,Button} from 'react-bootstrap'
 import './auth.css'
-import {Link} from 'react-router-dom'
+import {Link,Redirect} from 'react-router-dom'
 import PropTypes from 'prop-types';
+import {connect} from 'react-redux'
+import { login } from '../../actions/auth';
+import { SignIn } from '../navbar/in';
 
 class SigninForm extends Component {
     state = {
@@ -10,23 +13,25 @@ class SigninForm extends Component {
         password : '',
     }
     static propTypes = {
-        register: PropTypes.func.isRequired,
+        login: PropTypes.func.isRequired,
         isAuthenticated: PropTypes.bool,
       };
     
-    onSubmit = (e) => {
+      onSubmit = (e) => {
         e.preventDefault();
-        const { username, password} = this.state;
-   
-        };
-      
- 
-      
-    
-      onChange = (e) => this.setState({ [e.target.name]: e.target.value });
-    
-    render() {    const { username,  password } = this.state;
+        this.props.login(this.state.username, this.state.password);
+       
+      };
 
+  
+
+      onChange = (e) => this.setState({ [e.target.name]: e.target.value });
+        
+    render() {    const { username,  password } = this.state;
+    if (this.props.isAuthenticated) {
+        return <Redirect to="/" />;
+      }
+  
          return(
             <div>
                 <Container>
@@ -50,9 +55,7 @@ class SigninForm extends Component {
                         <Form.Label>Password</Form.Label>
                         <Form.Control  size="lg" type="password" placeholder="Password" required onChange={this.onChange} value={password} name="password"/>
                     </Form.Group>
-                    <Link to="/">
-                    <Button variant="dark" id="button">Submit</Button>
-                    </Link>
+                    <Button variant="dark" id="button" type="submit">Submit</Button>
                     </Form>
                     </Col>
                     </Row>
@@ -62,4 +65,8 @@ class SigninForm extends Component {
         )
     }
 }
-export default SigninForm;
+const mapStateToProps = (state) => ({
+    isAuthenticated: state.auth.isAuthenticated,
+  });
+  
+export default connect(mapStateToProps, { login })(SigninForm);

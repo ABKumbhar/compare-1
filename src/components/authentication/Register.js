@@ -1,11 +1,12 @@
 import React, { Component } from 'react'
 import {Form,Row,Col,Container,Button} from 'react-bootstrap'
 import './auth.css'
-import {Link} from 'react-router-dom'
+import {Link,Redirect} from 'react-router-dom'
 import PropTypes from 'prop-types';
 import { register } from '../../actions/auth';
 import { createMessage } from '../../actions/messages';
 import {connect} from 'react-redux'
+import { useAlert } from 'react-alert'
 class Register extends Component {
     state = {
         username : '',
@@ -14,6 +15,7 @@ class Register extends Component {
         first_name : '',
         last_name : '',
         password2 : '',
+        error: '',
     }
     static propTypes = {
         register: PropTypes.func.isRequired,
@@ -24,8 +26,9 @@ class Register extends Component {
         e.preventDefault();
         const { username, email, password,first_name,last_name,password2 } = this.state;
         if (password !== password2) {
-            this.props.createMessage({ passwordNotMatch: 'Passwords do not match' });
-          } else {
+          alert("Password do not match!")  
+        } else {
+
             const newUser = {
            
               username,
@@ -43,9 +46,12 @@ class Register extends Component {
       
     
       onChange = (e) => this.setState({ [e.target.name]: e.target.value });
-    
-    render() {    const { username, email, password,first_name, last_name,password2 } = this.state;
-
+      
+    render() {   
+        if (this.props.isAuthenticated) {
+            return <Redirect to="/" />;
+          }
+         const { username, email, password,first_name, last_name,password2 } = this.state;
          return(
             <div>
                 <Container>
@@ -84,9 +90,16 @@ class Register extends Component {
                     </Form.Group>
                     <Form.Group controlId="formGroupPassword">
                         <Form.Label> Confirm Password</Form.Label>
-                        <Form.Control  size ="lg" type="password" placeholder="Password (again)" required onChange={this.onChange} value={password2} name="password2" />
+                        <Form.Control  size ="lg" type="password" placeholder="Password (again)" required onChange={this.onChange} value={password2} name="password2"/>
+                        <Form.Control.Feedback type="invalid" tooltip>
+                        something
+                   </Form.Control.Feedback>
+
                     </Form.Group>
-                    <Button variant="dark" id="button" type="submit">Submit</Button>
+                   
+                    <Button variant="dark" id="button" type="submit"  >Submit</Button>
+         
+
                     </Form>
                     </Col>
                     </Row>
