@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import {Form,Row,Col,Container,Button} from 'react-bootstrap'
+import {Form,Row,Col,Container,Button, Nav} from 'react-bootstrap'
 import './auth.css'
 import {Link,Redirect} from 'react-router-dom'
 import PropTypes from 'prop-types';
@@ -41,7 +41,7 @@ class SigninForm extends Component {
                     <div id="jumbo"></div>
                         </Col>
                         <Col lg={8}>
-                        Don't have account? <a href='/register' style={{color: "blue"}}>Click here </a> for register. 
+                        Don't have account? <Link to='/register' style={{color: "blue"}}>Click here </Link> for register. 
 
                   <Form className="form" onSubmit = {this.onSubmit}> 
                   <Form.Group controlId="formGroupEmail">
