@@ -8,17 +8,19 @@ import './blogs.css'
             if(!blog.trending){
             return(
                 <div key={blog.id}>
+                <a href="">
                 <Row>
-                    <Col lg={4}>
+                    <Col xs={5} lg={4}>
                     <div>
                          <Image src={blog.photo} className="blog-image"/>
                     </div>
                     </Col>
-                    <Col>
+                    <Col xs={7} lg={8}>
                        <div className="blog-headline"> {blog.headline} </div>
                     </Col>
                 </Row>  
                 <hr/>
+                </a>
                 </div>
                 
             )

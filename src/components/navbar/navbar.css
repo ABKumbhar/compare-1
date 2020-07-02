@@ -1,15 +1,149 @@
-#brand{
-    margin-left: 0px;
+#style-auth .nav-link{
+    display: inline-block;
 }
 
-@media screen and (max-width:425px){
+#style-auth strong{
+    padding-left: 10px;
+}
+@media screen and (max-width:428px){
+    .navbar{
+        padding:20px;
+        height:150px;
+    }
+    #brand{
+        position:relative;
+        top:-50px;
+    }
     .input-style{
-        margin-top:20px ;
-        margin-left: 50px;
+        position:relative;
+        top:35px;
+        left:-185px;
+    }
+    .input-style input{
+        width:350px;
     }
     #button-style{
-        position: relative;
-        right:0%;
-        top:-40px;
+        margin-top:-80px;
+        margin-left: -1px;
     }
+    .style-holder{
+        margin-left: 50px;
+    }
+    .style-reg{
+        margin-left:140%;
+    }
+   
+    
 }
+
+@media screen and (max-width:375px){
+    .navbar{
+        padding:20px;
+        height:150px;
+    }
+    #brand{
+        position:relative;
+        top:-50px;
+    }
+    .input-style{
+        position:relative;
+        top:35px;
+        left:-185px;
+    }
+    .input-style input{
+        width:300px;
+    }
+    #button-style{
+        margin-top:-80px;
+        margin-left: -1px;
+    }
+    .style-holder{
+        margin-left: 50px;
+    }
+    #style-auth{
+        margin-top: 0px;
+    }
+    .style-reg{
+        margin-left:100%;
+    }
+   
+   
+    
+}
+
+@media screen and (max-width:320px){
+    .navbar{
+        padding:20px;
+        height:150px;
+    }
+    #brand{
+        position:relative;
+        top:-50px;
+    }
+    .input-style{
+        position:relative;
+        top:35px;
+        left:-185px;
+    }
+    .input-style input{
+        width:250px;
+    }
+    #button-style{
+        margin-top:-79px;
+        margin-left: -1px;
+    }
+    .style-holder{
+        margin-left: 50px;
+    }
+    #style-auth{
+        margin-top: -20px;
+    }
+    .style-reg{
+        margin-left: 80%;
+    }
+   
+    
+}
+/* @media screen and (min-width:375px){
+    
+    .input-style input{
+        width:300px;
+    }
+
+   
+    
+}
+@media screen and (min-width:420px){
+    
+    .input-style input{
+        width:350px;
+    }
+   
+    
+}
+@media screen and (min-width:768px){
+    .navbar{
+        padding:20px;
+    }
+    #brand{
+        position:relative;
+        top:-50px;
+    }
+    .input-style{
+        position:relative;
+        top:35px;
+        left:-185px;
+    }
+    .input-style input{
+        width:250px;
+    }
+    #button-style{
+        margin-top:-80px;
+        margin-left: -1px;
+    }
+    .style-holder{
+        margin-left: 50px;
+    }
+   
+    
+} */

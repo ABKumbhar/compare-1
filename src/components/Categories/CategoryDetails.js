@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios';
 import {Link} from 'react-router-dom'
-import ShowMoreText from 'react-show-more-text';
 import {Card,Row,Col,Button,Image, Container} from 'react-bootstrap'
  class CategoryDetails extends Component {
      state={
@@ -20,9 +19,6 @@ import {Card,Row,Col,Button,Image, Container} from 'react-bootstrap'
                 })
             })
     }
-    executeOnClick(isExpanded) {
-        console.log(isExpanded);
-     }
     render() {
         const results =this.state.results;
         return (
@@ -40,18 +36,9 @@ import {Card,Row,Col,Button,Image, Container} from 'react-bootstrap'
                         <Card.Body>
                             {/* <Card.Title>Special title treatment</Card.Title> */}
                             <Card.Subtitle className="mb-2 text-muted">Category:{result.category}</Card.Subtitle>
-                            <ShowMoreText
-                                                /* Default options */
-                                                lines={3}
-                                                more=''
-                                                onClick={this.executeOnClick}
-                                                expanded={false}
-                                                width={500}
-                            >
                             <Card.Text
                             dangerouslySetInnerHTML={ {__html: result.headline} }>
                             </Card.Text>
-                            </ShowMoreText>
                             <Button variant="success" id="details-btn" className="text-center">View details</Button>
                          </Card.Body>
                          </Col>

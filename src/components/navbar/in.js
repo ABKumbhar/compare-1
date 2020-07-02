@@ -15,10 +15,9 @@ export class SignIn extends Component {
     {    const { isAuthenticated, user } = this.props.auth;
     
     const authLinks = (
-            <div>
-            <span>
+            <div id="style-auth">
             <strong>{user ? `Welcome ${user.username}` : ''}</strong>
-            </span>
+           
 
             <Nav.Link>
             <button onClick={this.props.logout} className="nav-link btn btn-info btn-sm text-light">
@@ -31,7 +30,7 @@ export class SignIn extends Component {
   
       const guestLinks = (
           <div>
-            <Nav.Link href="/register" >
+            <Nav.Link className="style-reg" href="/register" >
               Register/Login
             </Nav.Link>
             </div>

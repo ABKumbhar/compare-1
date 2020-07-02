@@ -54,7 +54,7 @@ class Register extends Component {
          const { username, email, password,first_name, last_name,password2 } = this.state;
          return(
             <div>
-                <Container>
+                <Container id="cont">
                     <Row>
 
                         <Col lg={4}>

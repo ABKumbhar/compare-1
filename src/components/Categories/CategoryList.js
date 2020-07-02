@@ -20,16 +20,16 @@ const CategoryNontrendingList=({categories})=>{
             return(
                
                  
-                  <Col lg={4} key={category.id}>
+                  <Col md={6}lg={3} key={category.id}>
                   <Link to={'/category/' +category.path}>
                   
                    <Card id="style-body">
                      <Row>
-                       <Col xs={10}lg={8}>
+                       <Col xs={10} md={7} lg={9}>
                        <Card.Body >{category.name}</Card.Body>
                      
                      </Col>
-                    <Col xs={2}lg={4}>
+                     <Col xs={2} md={5} lg={3}>
                         <motion.div
                         variants={ImgVariants}
                         initial="hidden"
