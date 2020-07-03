@@ -2,10 +2,11 @@ import React,{ Component } from 'react'
 import {Nav} from 'react-bootstrap';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import {Link} from 'react-router-dom'
 import { logout } from '../../actions/auth';
 import './navbar.css'
 import { components } from 'react-select';
-
+import ModalComponent from '../authentication/Modal'
 export class SignIn extends Component {
     static propTypes = {
         auth: PropTypes.object.isRequired,
@@ -30,9 +31,10 @@ export class SignIn extends Component {
   
       const guestLinks = (
           <div>
-            <Nav.Link className="style-reg" href="/register" >
+            <Link to="/register" >
               Register/Login
-            </Nav.Link>
+            </Link>
+             <ModalComponent isOpen = {true} />
             </div>
       );
   
