@@ -13,11 +13,13 @@ import store from './store';
 import { loadUser } from './actions/auth';
 import {useEffect} from 'react'
 import AlertTemplate from 'react-alert-template-basic';
+import { Modal, ModalHeader } from 'reactstrap';
 import Alerts from './components/Alerts'
 
  
-class App extends Component {
- 
+  class App extends Component {
+  
+  
     componentDidMount() {
       store.dispatch(loadUser());
     }
@@ -30,8 +32,8 @@ render(){const alertOptions = {
 
     <div className="App">
     
-    <Provider store={store}>
-    <AlertProvider template={AlertTemplate} {...alertOptions}>
+            <Provider store={store}>
+         <AlertProvider template={AlertTemplate} {...alertOptions}>
       <Router>
         <Top />
        <Alerts/>

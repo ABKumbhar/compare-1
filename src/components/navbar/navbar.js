@@ -24,6 +24,7 @@ function Top(props) {
     const [item, setItem] = useState([])
     const [division, setDivision] = useState([])
     const [category, setcategory] = useState([])
+    const [company, setCompany] = useState([])
     const options = [
         // ...
         { value: 'Stanford University', label: 'Stanford' },
@@ -69,6 +70,23 @@ function Top(props) {
 
       useEffect(() => {
         axios
+        .get(`https://aniket1999.pythonanywhere.com/en/company`)
+        .then((res)=> 
+           {console.log(res)
+        setCompany(res.data)
+    }
+         
+        )
+        .catch((error)=>
+        {console.log(error.message)
+        }
+        )
+
+     ;
+      }, []);  
+
+      useEffect(() => {
+        axios
         .get(`https://aniket1999.pythonanywhere.com/en/list?search=${buttn}`)
         .then((res)=> 
            {console.log(res)
@@ -89,8 +107,7 @@ function Top(props) {
     <div>
           
          <Navbar bg="light" variant="light" className="navbar" >
-            <Navbar.Brand href="/" id="brand">Bonjour Techies</Navbar.Brand>
-            
+            <Navbar.Brand><Link to = "/">Bonjour Techies</Link></Navbar.Brand>
 
                 <Form inline  className="ml-auto input-style">
                 <Input type="text" list="cars" placeholder="Look for the best...." className="mr-sm-2 style-holder" onChange={e => setbuttn(e.target.value)}/>
@@ -103,6 +120,11 @@ function Top(props) {
 
                        <option>{value.name}</option>
                         )})}
+                        {buttn && company.map((value) => {return(
+
+                            <option>{value.name}</option>
+                           )})}
+
 
                     </datalist>
                     {/* <Input type="search" placeholder="Look for the best...." className="mr-sm-2 input-style" onChange={e => setbuttn(e.target.value)} /> */}
