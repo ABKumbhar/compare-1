@@ -19,7 +19,7 @@ height: 500px;
     padding:40px;
 }
 #cont{
-   margin-top: 0px; 
+   margin-top: 100px; 
 }
 @media screen and (max-width:425px){
     .signin-container{
@@ -37,4 +37,7 @@ height: 500px;
     #jumbo{
         height:300px;
     }
+    #cont{
+        margin-top: 0px; 
+     }
 }

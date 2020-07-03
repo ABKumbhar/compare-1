@@ -13,13 +13,11 @@ import store from './store';
 import { loadUser } from './actions/auth';
 import {useEffect} from 'react'
 import AlertTemplate from 'react-alert-template-basic';
-
 import Alerts from './components/Alerts'
 
-
-
  
-  class App extends Component {
+class App extends Component {
+ 
     componentDidMount() {
       store.dispatch(loadUser());
     }
@@ -31,18 +29,20 @@ render(){const alertOptions = {
   return (
 
     <div className="App">
-            <Provider store={store}>
-         <AlertProvider template={AlertTemplate} {...alertOptions}>
+    
+    <Provider store={store}>
+    <AlertProvider template={AlertTemplate} {...alertOptions}>
       <Router>
-        <Top/>
-        <Alerts/>
+        <Top />
+       <Alerts/>
+        
         <Switch>
           <Route path="/signout" />
           <Route exact path ="/" component={HomeContent}/>
           <Route path ="/register" component={Register}/>
           <Route path ="/login" component={SigninForm}/>
-
-          <Route path="/en/company/:slug" component={Details}/>
+          
+          <Route path="/en/company/:slug" component={Details}></Route>
           
           <Route path="/search" component={SearchComponent}/>
 

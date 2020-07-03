@@ -14,7 +14,7 @@ import HomeContent from '../layout/homeContent'
 import axios from 'axios'
 //import Select from 'react-select';
 import { connect } from 'react-redux';
-
+import Languages from './languages';
 //import {DropdownInput} from 'react-dropdown-input';
 
 function Top(props) {
@@ -90,6 +90,7 @@ function Top(props) {
           
          <Navbar bg="light" variant="light" className="navbar" >
             <Navbar.Brand href="/" id="brand">Bonjour Techies</Navbar.Brand>
+            
 
                 <Form inline  className="ml-auto input-style">
                 <Input type="text" list="cars" placeholder="Look for the best...." className="mr-sm-2 style-holder" onChange={e => setbuttn(e.target.value)}/>
@@ -109,6 +110,7 @@ function Top(props) {
            
 
                         <SignIn/>
+                        
                 </Form>
     
       

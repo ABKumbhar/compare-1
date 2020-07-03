@@ -16,7 +16,8 @@ import {Card,Row,Col,Button,Image, Container} from 'react-bootstrap'
                 this.setState({
                     loading:true,
                     results:res.data
-                })
+                });
+                console.log(this.state)
             })
     }
     render() {
@@ -26,7 +27,7 @@ import {Card,Row,Col,Button,Image, Container} from 'react-bootstrap'
 
                 {results && results.map(result=>{
                     return(
-                    <Container>
+                    <Container className="mt-5">
                         <Link to={'/en/company/' + result.path} key={result.id}>
                         <Card className="text-left" key={result.id}>
                         <Row>
