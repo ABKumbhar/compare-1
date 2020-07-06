@@ -1,5 +1,5 @@
 .top-detail{
-    margin-top:50px ;
+    margin-top:30px ;
 }
 #name{
     font-weight: bold;
@@ -9,7 +9,7 @@
     color:rgb(95, 92, 92);
     text-transform: uppercase;
 }
-#aboutus{
+#aboutus,#whatisit{
     color:rgba(19, 122, 45, 0.904);
     font-weight:bold;
     margin-top:5px;
@@ -18,6 +18,11 @@
     color:rgba(19, 122, 45, 0.904);
     font-weight:bold;
     margin-top:5px;
+}
+
+#intro-answer,#checkitout,#about-company{
+    font-size: 15px;
+    line-height: 27px;
 }
 
 
@@ -35,16 +40,35 @@
     font-weight: bolder;
     text-transform: uppercase;
 }
+#style-box a{
+    font-size: smaller;
+}
 .alert{
  width:100%;
  margin: 5px;
  padding: 25px;
 }
 #style-alert{
-    margin-left: 40%;
+    margin-left: 38%;
+    font-size: large;
+    text-transform:uppercase;
 }
 .detail-image{
     margin-top: 0px;
     margin-left: 30%;
     width:50%;
+}
+.a{
+ table-layout: auto;
+ margin:10px;
+ width:100%;
+}
+.a th{
+ text-transform: uppercase;
+}
+.a #td {
+    font-weight: bold;
+    font-size: large;
+    text-decoration: underline;
+    background-color: rgb(228, 250, 221);
 }

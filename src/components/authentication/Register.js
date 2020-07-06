@@ -27,8 +27,8 @@ class Register extends Component {
         const { username, email, password,first_name,last_name,password2 } = this.state;
         if (password !== password2) {
           alert("Password do not match!")  
-        } else {
-
+        } 
+        else {
             const newUser = {
            
               username,
@@ -57,12 +57,13 @@ class Register extends Component {
                 <Container id="cont">
                     <Row>
 
-                        <Col lg={4}>
+                     <Col lg={4}>
                     <div id="jumbo"></div>
                         </Col>
                         <Col lg={8}>
+                            <div className="text-center">
                         Already have account? <Link to='/login' style={{color: "blue"}}>Click here </Link> for logging in. 
-
+                           </div>
                   <Form className="form" onSubmit = {this.onSubmit}> 
                   <Form.Group controlId="formGroupEmail">
                         <Form.Label>Username</Form.Label>

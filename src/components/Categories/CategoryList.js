@@ -16,11 +16,12 @@ const CategoryNontrendingList=({categories})=>{
   return (
       <Row >
         { categories && categories.map(category =>{
-          if(!category.trending){
+          
             return(
                
                  
                   <Col md={6}lg={3} key={category.id}>
+                    {!category.trending?
                   <Link to={'/category/' +category.path}>
                   
                    <Card id="style-body">
@@ -41,12 +42,12 @@ const CategoryNontrendingList=({categories})=>{
                      </Row>
                    </Card>
                   </Link>
+                  :''}
               </Col>
             )
             }
      
-         }
-      )}
+            )}
         </Row>
         
 

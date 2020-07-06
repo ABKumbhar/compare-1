@@ -5,10 +5,11 @@ import './blogs.css'
     return (
         <div>
         {blogs && blogs.map(blog =>{
-            if(!blog.trending){
+        
             return(
                 <div key={blog.id}>
-                <a href="">
+                {!blog.trending ?
+                <div>
                 <Row>
                     <Col xs={5} lg={4}>
                     <div>
@@ -18,13 +19,15 @@ import './blogs.css'
                     <Col xs={7} lg={8}>
                        <div className="blog-headline"> {blog.headline} </div>
                     </Col>
+            
                 </Row>  
                 <hr/>
-                </a>
+                </div>
+            
+                :''}
                 </div>
                 
             )
-            }
         })}
            
         </div>

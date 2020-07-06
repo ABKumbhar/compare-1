@@ -16,8 +16,6 @@ import AlertTemplate from 'react-alert-template-basic';
 import { Modal, ModalHeader } from 'reactstrap';
 import Alerts from './components/Alerts'
 
-
-
  
   class App extends Component {
   
@@ -37,15 +35,16 @@ render(){const alertOptions = {
             <Provider store={store}>
          <AlertProvider template={AlertTemplate} {...alertOptions}>
       <Router>
-        <Top/>
-        <Alerts/>
+        <Top />
+       <Alerts/>
+        
         <Switch>
           <Route path="/signout" />
           <Route exact path ="/" component={HomeContent}/>
           <Route path ="/register" component={Register}/>
           <Route path ="/login" component={SigninForm}/>
-
-          <Route path="/en/company/:slug" component={Details}/>
+          
+          <Route path="/en/company/:slug" component={Details}></Route>
           
           <Route path="/search" component={SearchComponent}/>
 
