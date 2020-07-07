@@ -1,5 +1,5 @@
 import React from 'react'
-import {Table} from 'react-bootstrap';
+import {Table,Button} from 'react-bootstrap';
 const TableDetails=({header,details})=> {
     return (
         <Table striped bordered hover responsive className="a" >
@@ -22,11 +22,17 @@ const TableDetails=({header,details})=> {
                             return(
                                  <tbody>
                                     <tr>
-                                        <td id="td"><a href={detail.url}>{detail.name}</a></td>
+                                        <td id="td"><a href={detail.url}>{detail.name}</a>
+                                        <br/>
+                                        {detail.buyurl!== null ?
+                                         <Button variant="secondary"><a href={detail.buyurl}>Buy now</a></Button>
+                                         :''
+                                          }
+                                        </td>
             
                                         {detail.featuresub.map(det=>{
                                             return(
-                                                <td> {det.text}</td>
+                                                <td > {det.text}</td>
                                             )
                                         })}
                                     

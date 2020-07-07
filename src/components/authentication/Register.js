@@ -66,31 +66,31 @@ class Register extends Component {
                            </div>
                   <Form className="form" onSubmit = {this.onSubmit}> 
                   <Form.Group controlId="formGroupEmail">
-                        <Form.Label>Username</Form.Label>
+                        <Form.Label className="required">Username</Form.Label>
                         <Form.Control size="lg" type="text" placeholder="Enter username" required onChange={this.onChange} value={username} name="username"/>
                     </Form.Group>
 
                     <Row>
                         <Col>
-                        <Form.Label>First Name</Form.Label>
+                        <Form.Label className="required">First Name</Form.Label>
                         <Form.Control placeholder="First name" required id="style-form" type="text" onChange={this.onChange} value={first_name} name="first_name" />
                         </Col>
                         <Col>
-                        <Form.Label>Last Name</Form.Label>
+                        <Form.Label >Last Name</Form.Label>
                         <Form.Control placeholder="Last name" type="text" onChange={this.onChange} value={last_name} name="last_name"/>
                         </Col>
                     </Row>
                     <br/>
                     <Form.Group controlId="formGroupEmail">
-                        <Form.Label>Email address</Form.Label>
+                        <Form.Label className="required">Email address</Form.Label>
                         <Form.Control size="lg" type="email" placeholder="Enter email" required onChange={this.onChange} value={email} name="email"/>
                     </Form.Group>
                     <Form.Group controlId="formGroupPassword">
-                        <Form.Label>Password</Form.Label>
+                        <Form.Label className="required">Password</Form.Label>
                         <Form.Control  size="lg" type="password" placeholder="Password" required onChange={this.onChange} value={password} name="password"/>
                     </Form.Group>
                     <Form.Group controlId="formGroupPassword">
-                        <Form.Label> Confirm Password</Form.Label>
+                        <Form.Label className="required"> Confirm Password</Form.Label>
                         <Form.Control  size ="lg" type="password" placeholder="Password (again)" required onChange={this.onChange} value={password2} name="password2"/>
                         <Form.Control.Feedback type="invalid" tooltip>
                         something

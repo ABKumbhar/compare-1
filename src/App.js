@@ -18,7 +18,9 @@ import Alerts from './components/Alerts'
 
  
   class App extends Component {
-  
+   state={
+     language:""
+   }
   
     componentDidMount() {
       store.dispatch(loadUser());
@@ -35,7 +37,7 @@ render(){const alertOptions = {
             <Provider store={store}>
          <AlertProvider template={AlertTemplate} {...alertOptions}>
       <Router>
-        <Top />
+        <Top language={this.state.language} />
        <Alerts/>
         
         <Switch>

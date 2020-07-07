@@ -72,3 +72,105 @@
     text-decoration: underline;
     background-color: rgb(228, 250, 221);
 }
+/* responsive */
+@media screen and (max-width:768px){
+    .detail-image{
+        margin-top: 0px;
+        margin-left: 0%;
+        width:30%;
+    }
+    #style-box{
+        padding: 0px;
+        margin-top: 0%;
+        border-radius: 70px;
+        box-sizing: border-box;
+        border: 1px solid grey;
+        text-align: center;
+        position: relative;
+        top:-170px;
+        left:300px;
+        width:50%;
+    
+    }
+    #style-alert{
+        margin-left: 30%;
+        font-size: large;
+        text-transform:uppercase;
+    }
+}
+@media screen and (max-width:425px){
+    .detail-image{
+        margin-top: 0px;
+        margin-left: 0%;
+        width:40%;
+    }
+    #style-box{
+        padding: 10px;
+        margin-top: 0%;
+        border-radius: 70px;
+        box-sizing: border-box;
+        border: 1px solid grey;
+        text-align: center;
+        position: relative;
+        top:-130px;
+        left:200px;
+        width:45%;
+    
+    }
+    #style-alert{
+        margin-left: 15%;
+        font-size: large;
+        text-transform:uppercase;
+    }
+}
+@media screen and (max-width:375px){
+    .detail-image{
+        margin-top: 0px;
+        margin-left: 0%;
+        width:40%;
+    }
+    #style-box{
+        padding: 5px;
+        margin-top: 0%;
+        border-radius: 10px;
+        box-sizing: border-box;
+        border: 1px solid grey;
+        text-align: center;
+        position: relative;
+        top:-110px;
+        left:170px;
+        width:50%;
+    
+    }
+    #style-alert{
+        margin-left: 10%;
+        font-size: medium;
+        text-transform:uppercase;
+    }
+}
+@media screen and (max-width:320px){
+    .detail-image{
+        margin-top: 0px;
+        margin-left: 0%;
+        width:40%;
+    }
+    #style-box{
+        padding: 0px;
+        margin-top: 0%;
+        border-radius: 10px;
+        box-sizing: border-box;
+        border: 1px solid grey;
+        text-align: center;
+        position: relative;
+        top:-100px;
+        left:125px;
+        width:55%;
+        font-size: small;
+    
+    }
+    #style-alert{
+        margin-left: 5%;
+        font-size: medium;
+        text-transform:uppercase;
+    }
+}

@@ -53,7 +53,7 @@ class Details extends Component {
                     <div key={detail.id}>
                     <div className="top-detail">
                     <Row>
-                        <Col lg={8}>
+                        <Col  lg={8}>
                             <h3 id="name" dangerouslySetInnerHTML={ {__html:  detail.name} }></h3>
                             <hr/>
                             <span id="aboutus">About us</span>
@@ -64,7 +64,7 @@ class Details extends Component {
                                 
                             <hr/>
                          </Col>
-                        <Col lg={4}>
+                        <Col  lg={4}>
                          <Jumbotron>
                          <Image src={`https://aniket1999.pythonanywhere.com/${detail.logo}`} className="detail-image"/>
                          </Jumbotron>
@@ -86,7 +86,11 @@ class Details extends Component {
                    <Row>
                    
                    <Alert variant="success">
-                        <Alert.Link target='_blank'rel="noopener noreferrer" href={detail.url} id="style-alert" >Visit website for more!</Alert.Link>. .
+                        <Alert.Link target='_blank'rel="noopener noreferrer" href={detail.url} id="style-alert" >
+                            {detail.headline ? 
+                             <p>{detail.headline}</p>
+                            :'Click here for more!'}
+                   </Alert.Link>. .
                     </Alert>
                 
                    </Row>

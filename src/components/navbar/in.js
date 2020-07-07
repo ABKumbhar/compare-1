@@ -16,7 +16,7 @@ export class SignIn extends Component {
     {    const { isAuthenticated, user } = this.props.auth;
     
     const authLinks = (
-            <div id="style-auth">
+            <div>
             <strong>{user ? `Welcome ${user.username}` : ''}</strong>
            
 
@@ -30,7 +30,7 @@ export class SignIn extends Component {
       );
   
       const guestLinks = (
-          <div>
+          <div id="style-auth">
             <Link to="/register" >
               Register/Login
             </Link>
