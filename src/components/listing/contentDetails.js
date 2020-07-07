@@ -88,7 +88,7 @@ class Details extends Component {
                    <Alert variant="success">
                         <Alert.Link target='_blank'rel="noopener noreferrer" href={detail.url} id="style-alert" >
                             {detail.headline ? 
-                             <p>{detail.headline}</p>
+                             <p dangerouslySetInnerHTML={ {__html:  detail.headline} }></p>
                             :'Click here for more!'}
                    </Alert.Link>. .
                     </Alert>
