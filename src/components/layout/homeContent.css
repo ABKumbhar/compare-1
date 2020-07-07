@@ -59,10 +59,12 @@ body{
     text-decoration: none;
 }
 .style-header{
-    background: -webkit-linear-gradient(#eee, rgb(211, 55, 55));
-    background-clip: initial;
+  background: -webkit-linear-gradient(#eee, rgb(211, 55, 55));
+  background-clip: initial;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+   position: relative;
+   top:-15px;
 }
 .card-header{
     text-decoration: underline;
@@ -131,6 +133,11 @@ ul{
 }
 .copyright{
     margin-top: 30px;
+}
+#style-trend{
+    text-shadow: 2px 2px 8px rgb(118, 236, 187);
+    font-style: italic;
+    font-family:monospace;
 }
 
 /* footer content responsive */

@@ -45,14 +45,14 @@ class SigninForm extends Component {
 
                   <Form className="form" onSubmit = {this.onSubmit}> 
                   <Form.Group controlId="formGroupEmail">
-                        <Form.Label>Username</Form.Label>
+                        <Form.Label className="required">Username</Form.Label>
                         <Form.Control size="lg" type="text" placeholder="Enter username" required onChange={this.onChange} value={username} name="username"/>
                     </Form.Group>
 
   
                     <br/>
                     <Form.Group controlId="formGroupPassword">
-                        <Form.Label>Password</Form.Label>
+                        <Form.Label className="required">Password</Form.Label>
                         <Form.Control  size="lg" type="password" placeholder="Password" required onChange={this.onChange} value={password} name="password"/>
                     </Form.Group>
                     <Button variant="dark" id="button" type="submit">Submit</Button>

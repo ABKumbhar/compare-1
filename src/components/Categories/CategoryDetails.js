@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import axios from 'axios';
 import {Link} from 'react-router-dom'
 import {Card,Row,Col,Button,Image, Container} from 'react-bootstrap'
- class CategoryDetails extends Component {
+class CategoryDetails extends Component {
      state={
          loading:false,
          results:[]

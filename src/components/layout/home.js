@@ -11,7 +11,7 @@ class Home extends Component {
        trendingBlogs:[]
    }
    componentDidMount(){
-       axios.get(`https://aniket1999.pythonanywhere.com/en/blog/trending`)
+       axios.get(`https://aniket1999.pythonanywhere.com/en/blogurl/trending`)
        .then(res=>{
            // console.log(res)
            this.setState({
@@ -44,7 +44,8 @@ class Home extends Component {
                         </Carousel.Item>
                         {this.state.trendingBlogs && this.state.trendingBlogs.map(blog=>{
                             return(
-                                <Carousel.Item key={blog.id}>
+                                <a href={blog.url} key={blog.id}>
+                                <Carousel.Item >
                                 <Image
                                 className="d-block w-100"
                                 src={`https://aniket1999.pythonanywhere.com/${blog.photo}`} text="Second slide"
@@ -55,6 +56,7 @@ class Home extends Component {
                                   <h3>{blog.headline}</h3>
                                 </Carousel.Caption>
                             </Carousel.Item>
+                            </a>
                             )
                         })}
                     </Carousel>

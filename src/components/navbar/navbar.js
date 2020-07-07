@@ -17,7 +17,7 @@ import { connect } from 'react-redux';
 import Languages from './languages';
 //import {DropdownInput} from 'react-dropdown-input';
 
-function Top(props) {
+function Top(props,{language}) {
    
 
     const [buttn,setbuttn] = useState('')
@@ -107,8 +107,8 @@ function Top(props) {
     <div>
           
          <Navbar bg="light" variant="light" className="navbar" >
-            <Navbar.Brand><Link to = "/">Bonjour Techies</Link></Navbar.Brand>
-
+            <Navbar.Brand><Link to = "/" id="brand">Bonjour Techies</Link></Navbar.Brand>
+                {/* <Languages lang={language}/> */}
                 <Form inline  className="ml-auto input-style">
                 <Input type="text" list="cars" placeholder="Look for the best...." className="mr-sm-2 style-holder" onChange={e => setbuttn(e.target.value)}/>
                     <datalist id="cars">

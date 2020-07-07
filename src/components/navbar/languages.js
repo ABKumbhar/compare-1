@@ -1,13 +1,20 @@
 import React,{Component} from 'react';
 import {Dropdown} from 'react-bootstrap';
 class Languages extends Component {
-    state=this.props.lang
-     clickMe =(e)=>{
-         this.props.clickMe(e)
-     }
+    state={
+      lang:this.props.language
+    }
+    clickMe=(e)=>{
+       this.setState({
+       lang:e.target.name
+
+       })
+       console.log(this.state);
+    }
+    
     render(){
     return (
-        <Dropdown style={{marginLeft:"700px"}}>
+        <Dropdown >
         <Dropdown.Toggle variant="light" id="dropdown-basic">
           Languages
           <i className="fas fa-globe"></i>
