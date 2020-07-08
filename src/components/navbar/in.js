@@ -7,13 +7,20 @@ import { logout } from '../../actions/auth';
 import './navbar.css'
 import { components } from 'react-select';
 import ModalComponent from '../authentication/Modal'
+import { Jumbotron } from 'reactstrap';
 export class SignIn extends Component {
-    static propTypes = {
+  state={
+    timePassed: false
+  }  
+  static propTypes = {
         auth: PropTypes.object.isRequired,
         logout: PropTypes.func.isRequired,
       };
     render()
-    {    const { isAuthenticated, user } = this.props.auth;
+    { setTimeout(() => {this.setState({timePassed: true})}, 7000)
+   
+      const { isAuthenticated, user } = this.props.auth;
+
     
     const authLinks = (
             <div>
@@ -34,7 +41,7 @@ export class SignIn extends Component {
             <Link to="/register" >
               Register/Login
             </Link>
-             <ModalComponent isOpen = {true} />
+            {this.state.timePassed ? <ModalComponent isOpen={true}/>:<div></div>}
             </div>
       );
   
