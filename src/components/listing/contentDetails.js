@@ -4,6 +4,8 @@ import './contentDetails.css';
 import FeatureListing from './featureListing';
 import IntroDetails from './introDetails'
 import TableDetails from './tableDetails'
+import StarRatings from 'react-star-ratings';
+
 import {Container,Jumbotron,Image, Row,Col,Alert} from 'react-bootstrap';
 class Details extends Component {
     state={ 
@@ -69,7 +71,15 @@ class Details extends Component {
                          <Image src={`https://aniket1999.pythonanywhere.com/${detail.logo}`} className="detail-image"/>
                          </Jumbotron>
                          <div id="style-box">
-                         <h4>Review: {detail.review}/5</h4>
+                         <h4>Review: {detail.review}/5        
+                          <StarRatings
+          rating={detail.review}
+          starRatedColor="yellow"
+          changeRating={this.changeRating}
+          numberOfStars={5}
+          name='rating'
+        />
+</h4>
                         <a target='_blank' rel="noopener noreferrer" href={detail.url} as="h6">Go to website</a>
                         </div>
                         </Col>
