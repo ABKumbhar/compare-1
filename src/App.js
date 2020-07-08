@@ -16,12 +16,12 @@ import AlertTemplate from 'react-alert-template-basic';
 import { Modal, ModalHeader } from 'reactstrap';
 import Alerts from './components/Alerts'
 import i18n from './i18next';
-import { Dropdown } from 'react-bootstrap';
+import { Dropdown,Button } from 'react-bootstrap';
 
  
 class App extends Component {
    state={
-     language:"en"
+     language:''
    }
     componentDidMount() {
       store.dispatch(loadUser());
@@ -51,6 +51,8 @@ render(){
        <AlertProvider template={AlertTemplate} {...alertOptions}>
       <Router>
         <Top/>
+
+
         <Dropdown >
         <Dropdown.Toggle variant="light" id="dropdown-basic">
           Languages
@@ -58,7 +60,7 @@ render(){
         </Dropdown.Toggle>
       
         <Dropdown.Menu>
-        <Dropdown.Item onClick={(e)=>this.handleClick('fr',e)} name='fr'>French</Dropdown.Item>
+          <Dropdown.Item onClick={(e)=>this.handleClick('fr',e)} name='fr'>French</Dropdown.Item>
           <Dropdown.Item onClick={(e)=>this.handleClick('de',e)} name='de'>German</Dropdown.Item>
           <Dropdown.Item onClick={(e)=>this.handleClick('ja',e)} name='ja'>Japanese</Dropdown.Item>
 
