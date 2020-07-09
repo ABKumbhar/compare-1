@@ -6,7 +6,7 @@ class Blogs extends Component {
         blogs:[],
      }
      componentDidMount(){
-         axios.get(`https://aniket1999.pythonanywhere.com/en/blog/`)
+         axios.get(`https://aniket1999.pythonanywhere.com/en/blogurl/`)
             .then(res=>{
                 // console.log(res)
                 this.setState({
