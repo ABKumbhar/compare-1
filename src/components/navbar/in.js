@@ -24,7 +24,7 @@ export class SignIn extends Component {
     
     const authLinks = (
             <div>
-            <strong>{user ? `Welcome ${user.username}` : ''}</strong>
+            <strong>{user ? `Welcome ${user.first_name}` : ''}</strong>
            
 
             <Nav.Link>

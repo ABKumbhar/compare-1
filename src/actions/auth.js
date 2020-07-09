@@ -34,7 +34,7 @@ export const loadUser = () => (dispatch, getState) => {
 };
 
 // LOGIN USER
-export const login = (username, password) => (dispatch) => {
+export const login = (email, password) => (dispatch) => {
   // Headers
   const config = {
     headers: {
@@ -43,7 +43,7 @@ export const login = (username, password) => (dispatch) => {
   };
 
   // Request Body
-  const body = JSON.stringify({ username, password });
+  const body = JSON.stringify({ email, password });
 
   axios
     .post('https://aniket1999.pythonanywhere.com/en/auth/login', body, config)

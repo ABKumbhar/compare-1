@@ -8,7 +8,7 @@ import {Navbar,Form,FormControl,Button, NavItem} from 'react-bootstrap';
 import { logout } from '../../actions/auth';
 import {Input,Select} from 'reactstrap'
 import SearchComponent from './SearchComponent';
-import {Link } from 'react-router-dom'
+import {Link ,Redirect} from 'react-router-dom'
 import { navigate } from "@reach/router"
 import HomeContent from '../layout/homeContent'
 import axios from 'axios'
@@ -25,11 +25,7 @@ function Top(props,{language}) {
     const [division, setDivision] = useState([])
     const [category, setcategory] = useState([])
     const [company, setCompany] = useState([])
-    const options = [
-        // ...
-        { value: 'Stanford University', label: 'Stanford' },
-        // ...
-    ];
+   
      
     
         
@@ -101,7 +97,14 @@ function Top(props,{language}) {
 
      ;
       }, [buttn]);
-
+      
+      
+     const handleKeyPress = (target) => {
+        if(target.charCode==13){
+          alert("Please click on red search button!")
+        } 
+      };
+      
 
         return (
     <div>
@@ -110,7 +113,7 @@ function Top(props,{language}) {
             <Navbar.Brand><Link to = "/" id="brand">Bonjour Techies</Link></Navbar.Brand>
                 {/* <Languages lang={language}/> */}
                 <Form inline  className="ml-auto input-style">
-                <Input type="text" list="cars" placeholder="Look for the best...." className="mr-sm-2 style-holder" onChange={e => setbuttn(e.target.value)}/>
+                <Input type="text" list="cars" placeholder="Look for the best...." className="mr-sm-2 style-holder" onChange={e => setbuttn(e.target.value)} onKeyPress={handleKeyPress} />
                     <datalist id="cars">
                         {buttn && division.map((value) => {return(
 

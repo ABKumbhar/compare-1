@@ -9,7 +9,7 @@ import { SignIn } from '../navbar/in';
 
 class SigninForm extends Component {
     state = {
-        username : '',
+        email : '',
         password : '',
     }
     static propTypes = {
@@ -19,7 +19,7 @@ class SigninForm extends Component {
     
       onSubmit = (e) => {
         e.preventDefault();
-        this.props.login(this.state.username, this.state.password);
+        this.props.login(this.state.email, this.state.password);
        
       };
 
@@ -27,7 +27,7 @@ class SigninForm extends Component {
 
       onChange = (e) => this.setState({ [e.target.name]: e.target.value });
         
-    render() {    const { username,  password } = this.state;
+    render() {    const { email,  password } = this.state;
     if (this.props.isAuthenticated) {
         return <Redirect to="/" />;
       }
@@ -45,8 +45,8 @@ class SigninForm extends Component {
 
                   <Form className="form" onSubmit = {this.onSubmit}> 
                   <Form.Group controlId="formGroupEmail">
-                        <Form.Label className="required">Username</Form.Label>
-                        <Form.Control size="lg" type="text" placeholder="Enter username" required onChange={this.onChange} value={username} name="username"/>
+                        <Form.Label className="required">Email</Form.Label>
+                        <Form.Control size="lg" type="text" placeholder="Enter email" required onChange={this.onChange} value={email} name="email"/>
                     </Form.Group>
 
   
