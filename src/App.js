@@ -21,17 +21,16 @@ import { Dropdown,Button } from 'react-bootstrap';
  
 class App extends Component {
    state={
-     language:''
+     language:'',
    }
     componentDidMount() {
       store.dispatch(loadUser());
     }  
     
-    handleClick=(lang,e)=>{
-      e.preventDefault();
+    handleClick=(lang)=>{
       i18n.changeLanguage(lang);
       this.setState({
-        language:e.target.name
+        language:lang
       })
       console.log(this.state)
     }
@@ -57,15 +56,16 @@ render(){
         <Dropdown.Toggle variant="light" id="dropdown-basic">
           Languages
           <i className="fas fa-globe"></i>
-        </Dropdown.Toggle>
-      
+        </Dropdown.Toggle>     
         <Dropdown.Menu>
-          <Dropdown.Item onClick={(e)=>this.handleClick('fr',e)} name='fr'>French</Dropdown.Item>
-          <Dropdown.Item onClick={(e)=>this.handleClick('de',e)} name='de'>German</Dropdown.Item>
-          <Dropdown.Item onClick={(e)=>this.handleClick('ja',e)} name='ja'>Japanese</Dropdown.Item>
+        <Dropdown.Item  onClick={()=>this.handleClick('en')} >English</Dropdown.Item>
 
-          <Dropdown.Item onClick={(e)=>this.handleClick('nl',e)}name='nl'>Dutch</Dropdown.Item>
-        </Dropdown.Menu>
+        <Dropdown.Item  onClick={()=>this.handleClick('fr')} >French</Dropdown.Item>
+          <Dropdown.Item onClick={()=>this.handleClick('ja')} >Japanese</Dropdown.Item>
+          <Dropdown.Item onClick={()=>this.handleClick('de')} >German</Dropdown.Item>
+
+          <Dropdown.Item onClick={()=>this.handleClick('nl')}>Dutch</Dropdown.Item>
+        </Dropdown.Menu> 
     
       </Dropdown>
        <Alerts/>

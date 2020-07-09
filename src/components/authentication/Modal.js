@@ -1,24 +1,32 @@
 import React,{useState} from 'react'
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter,  } from 'reactstrap';
+import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Fade } from 'reactstrap';
 import {Image} from 'react-bootstrap'
 import {Link} from 'react-router-dom';
+
 function ModalComponent(props) {
 
     const [isOpen, setisOpen] = useState(props.isOpen)
     
     const toggle = () => setisOpen(!isOpen);
 
-
+    // useEffect(() => {
+    //   const timer = setTimeout(() => {
+    //     console.log('This will run after 1 second!')
+    //     return(<)
+    //   }, 1000);
+    //   return () => clearTimeout(timer);
+    // }, []);
+    
     return (
         <div>
               <div>
-      <Modal isOpen={isOpen} toggle={toggle}modalTransition={{ timeout: 7000 }} backdropTransition={{ timeout: 7100 }} >
+      <Modal isOpen={isOpen} toggle={toggle} >
         <ModalHeader toggle={toggle}>Register for more updates</ModalHeader>
         <ModalBody>
-            Want to get updates on the newest news available? Then, click on the following links for register/login.
+            Want to get updates on the newest news available? Then, click on the following link for register.
            <br/>
            <br/>
-           If you don't have an account, then click register.
+           Create your account and enjoy the updates.
 
         </ModalBody>
         <ModalFooter>
@@ -32,4 +40,4 @@ function ModalComponent(props) {
     )
 }
 
-export default ModalComponent
+export default ModalComponent;
