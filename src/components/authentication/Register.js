@@ -38,6 +38,7 @@ class Register extends Component {
               last_name,
             };
             this.props.register(newUser);
+            alert("Succefully registered!")
           }
         };
       
