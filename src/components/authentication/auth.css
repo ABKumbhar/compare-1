@@ -1,7 +1,10 @@
 .form-control:focus{
     box-shadow: none;
-
 }
+.form-control:hover::-webkit-input-placeholder { color:transparent; }
+.form-control:focus:-moz-placeholder { color:transparent; } /* FF 4-18 */
+.form-control:focus::-moz-placeholder { color:transparent; } /* FF 19+ */
+.form-control:focus:-ms-input-placeholder { color:transparent; }
  .required:after
 {
     color: red;
@@ -26,6 +29,19 @@ height: 500px;
 #cont{
    margin-top: 100px; 
 }
+
+.form-control::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    font-size:small;
+  }
+  .form-control::-moz-placeholder { /* Firefox 19+ */
+    color: pink;
+  }
+  .form-control:-ms-input-placeholder { /* IE 10+ */
+    color: pink;
+  }
+  .form-control :-moz-placeholder { /* Firefox 18- */
+    color: pink;
+  }
 @media screen and (max-width:425px){
     .signin-container{
         margin-top: 0px; 

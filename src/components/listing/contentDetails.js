@@ -73,12 +73,13 @@ class Details extends Component {
                          <div id="style-box">
                          <h4>Review: {detail.review}/5        
                           <StarRatings
-          rating={detail.review}
-          starRatedColor="yellow"
-          changeRating={this.changeRating}
-          numberOfStars={5}
-          name='rating'
-        />
+                            rating={detail.review}
+                            starRatedColor="yellow"
+                            changeRating={this.changeRating}
+                            numberOfStars={5}
+                            name='rating'
+                            starDimension="25px"
+                            />
 </h4>
                         <a target='_blank' rel="noopener noreferrer" href={detail.url} as="h6">Go to website</a>
                         </div>
@@ -98,8 +99,8 @@ class Details extends Component {
                    <Alert variant="success">
                         <Alert.Link target='_blank'rel="noopener noreferrer" href={detail.url} id="style-alert" >
                             {detail.headline ? 
-                             <p dangerouslySetInnerHTML={ {__html:  detail.headline} }></p>
-                            :'Click here for more!'}
+                             <div className="text-center" dangerouslySetInnerHTML={ {__html:  detail.headline} }></div>
+                            :<div className="text-center">Click here for more!</div>}
                    </Alert.Link>. .
                     </Alert>
                 

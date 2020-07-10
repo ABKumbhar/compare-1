@@ -8,8 +8,7 @@ import './blogs.css'
         
             return(
                 <div key={blog.id}>
-                {!blog.trending ?
-                <div>
+                    <a href={blog.url}>
                 <Row>
                     <Col xs={5} lg={4}>
                     <div>
@@ -21,10 +20,8 @@ import './blogs.css'
                     </Col>
             
                 </Row>  
+                </a>
                 <hr/>
-                </div>
-            
-                :''}
                 </div>
                 
             )

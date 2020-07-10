@@ -16,12 +16,12 @@ import AlertTemplate from 'react-alert-template-basic';
 import { Modal, ModalHeader } from 'reactstrap';
 import Alerts from './components/Alerts'
 import i18n from './i18next';
-import { Dropdown } from 'react-bootstrap';
+import { Dropdown,Button } from 'react-bootstrap';
 
  
 class App extends Component {
    state={
-     language:'en',
+     language:'',
    }
     componentDidMount() {
       store.dispatch(loadUser());
@@ -50,19 +50,22 @@ render(){
        <AlertProvider template={AlertTemplate} {...alertOptions}>
       <Router>
         <Top/>
+
+
         <Dropdown >
         <Dropdown.Toggle variant="light" id="dropdown-basic">
-          Languages - {this.language}
+          Languages
           <i className="fas fa-globe"></i>
-        </Dropdown.Toggle>
-{/*       
+        </Dropdown.Toggle>     
         <Dropdown.Menu>
-        <Dropdown.Item >French</Dropdown.Item>
-          <Dropdown.Item onClick={this.handleClick('de')} >German</Dropdown.Item>
-          <Dropdown.Item onClick={this.handleClick('ja')} >Japanese</Dropdown.Item>
+        <Dropdown.Item  onClick={()=>this.handleClick('en')} >English</Dropdown.Item>
 
-          <Dropdown.Item onClick={this.handleClick('nl')}>Dutch</Dropdown.Item>
-        </Dropdown.Menu> */}
+        <Dropdown.Item  onClick={()=>this.handleClick('fr')} >French</Dropdown.Item>
+          <Dropdown.Item onClick={()=>this.handleClick('ja')} >Japanese</Dropdown.Item>
+          <Dropdown.Item onClick={()=>this.handleClick('de')} >German</Dropdown.Item>
+
+          <Dropdown.Item onClick={()=>this.handleClick('nl')}>Dutch</Dropdown.Item>
+        </Dropdown.Menu> 
     
       </Dropdown>
        <Alerts/>

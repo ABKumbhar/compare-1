@@ -4,11 +4,14 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import './i18next';
+import {IntlProvider} from 'react-intl';
 ReactDOM.render(
   <React.StrictMode>
+    <IntlProvider locale='en'>
     <Suspense fallback={(<div>Loading....</div>)}>
     <App />
     </Suspense>
+    </IntlProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );

@@ -23,10 +23,10 @@ function ModalComponent(props) {
       <Modal isOpen={isOpen} toggle={toggle} >
         <ModalHeader toggle={toggle}>Register for more updates</ModalHeader>
         <ModalBody>
-            Want to get updates on the newest news available? Then, click on the following links for register/login.
+            Want to get updates on the newest news available? Then, click on the following link for register.
            <br/>
            <br/>
-           If you don't have an account, then click register.
+           Create your account and enjoy the updates.
 
         </ModalBody>
         <ModalFooter>
