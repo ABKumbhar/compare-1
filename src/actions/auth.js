@@ -62,7 +62,7 @@ export const login = (email, password) => (dispatch) => {
 };
 
 // REGISTER USER
-export const register = ({ username, email, password,first_name, last_name}) => (dispatch) => {
+export const register = ({ email, password,first_name, last_name}) => (dispatch) => {
   // Headers
   const config = {
     headers: {
@@ -71,7 +71,7 @@ export const register = ({ username, email, password,first_name, last_name}) => 
   };
 
   // Request Body
-  const body = JSON.stringify({ username, email, password, first_name, last_name });
+  const body = JSON.stringify({  email, password, first_name, last_name });
 
   axios
     .post('https://aniket1999.pythonanywhere.com/en/auth/register', body, config)
