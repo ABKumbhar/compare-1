@@ -9,7 +9,7 @@ import {connect} from 'react-redux'
 import { useAlert } from 'react-alert'
 class Register extends Component {
     state = {
-        username : '',
+        
         email : '',
         password : '',
         first_name : '',
@@ -24,14 +24,13 @@ class Register extends Component {
     
     onSubmit = (e) => {
         e.preventDefault();
-        const { username, email, password,first_name,last_name,password2 } = this.state;
+        const {  email, password,first_name,last_name,password2 } = this.state;
         if (password !== password2) {
           alert("Password do not match!")  
         } 
         else {
             const newUser = {
            
-              username,
               email,
               password,
 
@@ -39,6 +38,7 @@ class Register extends Component {
               last_name,
             };
             this.props.register(newUser);
+            alert("Succefully registered!")
           }
         };
       
@@ -51,7 +51,7 @@ class Register extends Component {
         if (this.props.isAuthenticated) {
             return <Redirect to="/" />;
           }
-         const { username, email, password,first_name, last_name,password2 } = this.state;
+         const {  email, password,first_name, last_name,password2 } = this.state;
          return(
             <div>
                 <Container id="cont">
@@ -65,10 +65,6 @@ class Register extends Component {
                         Already have account? <Link to='/login' style={{color: "blue"}}>Click here </Link> for logging in. 
                            </div>
                   <Form className="form" onSubmit = {this.onSubmit}> 
-                  <Form.Group controlId="formGroupEmail">
-                        <Form.Label className="required">Username</Form.Label>
-                        <Form.Control size="lg" type="text" placeholder="Enter username" required onChange={this.onChange} value={username} name="username"/>
-                    </Form.Group>
 
                     <Row>
                         <Col>
