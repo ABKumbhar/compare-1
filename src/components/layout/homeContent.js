@@ -44,10 +44,10 @@ class HomeContent extends Component {
                     </Row>
                    <Row id="lists">
                        <Col lg={9}>
-                       <div id="style-trend">Trending today...</div> 
+                       <div id="style-trend"><mark>Trending today...</mark></div> 
                           {results && results.map(result =>{
                                return(
-                                <Link to={'/en/company/' + result.path} key={result.id}>
+                                <Link to={'/' + result.path} key={result.id}>
                                          
                                         <Card className="text-left" key={result.id}>
                                         <hr></hr>

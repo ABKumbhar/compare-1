@@ -55,9 +55,14 @@ class Details extends Component {
                     <div key={detail.id}>
                     <div className="top-detail">
                     <Row>
+                    <a  href={detail.url}>
+                    <h3 id="name" dangerouslySetInnerHTML={ {__html:  detail.name} }></h3>
+                    </a>
+                     <hr/>
+                    </Row>
+                    <Row>
                         <Col  lg={8}>
-                            <h3 id="name" dangerouslySetInnerHTML={ {__html:  detail.name} }></h3>
-                            <hr/>
+                            
                             <span id="aboutus">About us</span>
                              
                              <p id="about-company" dangerouslySetInnerHTML={ {__html:  detail.bestfor} }>
@@ -66,12 +71,12 @@ class Details extends Component {
                                 
                             <hr/>
                          </Col>
-                        <Col  lg={4}>
+                        <Col xs={{ order: 'first' }} md={{ order: 'last' }} lg={4}>
                          <Jumbotron>
                          <Image src={`https://aniket1999.pythonanywhere.com/${detail.logo}`} className="detail-image"/>
                          </Jumbotron>
                          <div id="style-box">
-                         <h4>Review: {detail.review}/5        
+                         <h4>Rating: {detail.review}/5        
                           <StarRatings
                             rating={detail.review}
                             starRatedColor="yellow"
@@ -96,7 +101,7 @@ class Details extends Component {
                    </Row>
                    <Row>
                    
-                   <Alert variant="success">
+                   <Alert  id ="alert">
                         <Alert.Link target='_blank'rel="noopener noreferrer" href={detail.url} id="style-alert" >
                             {detail.headline ? 
                              <div className="text-center" dangerouslySetInnerHTML={ {__html:  detail.headline} }></div>

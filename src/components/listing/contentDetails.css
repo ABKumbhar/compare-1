@@ -1,7 +1,7 @@
 .top-detail{
     margin-top:30px ;
 }
-#name{
+#intro-name{
     font-weight: bold;
     text-decoration: underline;
     margin-top:50px;
@@ -9,10 +9,19 @@
     color:rgb(95, 92, 92);
     text-transform: uppercase;
 }
+#name{
+    font-weight: bold;
+    text-decoration: underline;
+    margin-top:50px;
+    margin-left:10px;
+    color:rgb(95, 92, 92);
+    text-transform: uppercase;
+}
 #aboutus,#whatisit{
     color:rgba(9, 75, 105, 0.904);
     font-weight:bolder;
-    margin-top:5px;text-decoration: underline;
+    margin-top:5px;
+    text-decoration: underline;
 }
 #h3{
     color:rgba(9, 75, 105, 0.904);
@@ -47,16 +56,26 @@
 #style-box a{
     font-size: smaller;
 }
-.alert{
+#alert{
  width:100%;
  margin: 5px;
- padding: 25px;
+ background-color: rgba(178, 248, 171, 0.404);
+
 }
 #style-alert{
     margin-left: 38%;
-    font-size: large;
+    font-size: x-large;
     text-transform:uppercase;
 }
+#style-alert div{
+    background: white;
+    font-family:monospace;
+    font-weight: bold;
+    text-decoration: underline;
+    line-height: 30px;
+    padding: 3px;
+    color:darkgreen
+ }
 .detail-image{
     margin-top: 0px;
     margin-left: 30%;
@@ -114,7 +133,7 @@
     }
     #style-alert{
         margin-left: 30%;
-        font-size: large;
+        font-size: larger;
         text-transform:uppercase;
     }
 } 
@@ -140,7 +159,7 @@
 }
     #style-alert{
         margin-left: 5%;
-        font-size: medium;
+        font-size: large;
         text-transform:uppercase;
     }
 }
@@ -163,7 +182,7 @@
 }
     #style-alert{
         margin-left: 5%;
-        font-size: medium;
+        font-size: large;
         text-transform:uppercase;
     }
 }
@@ -171,12 +190,12 @@
 @media screen and (max-width:320px){
     .detail-image{
         margin-top: 0px;
-        margin-left: 65px;
-        width:50%;
+        margin-left: 0px;
+        width:100%;
     }
    
      #style-box{
-    padding: 10px;
+    padding: 5px;
     margin-top: 0%;
     margin-bottom: 10%;
     border-radius: 50px;
@@ -187,7 +206,9 @@
 }
     #style-alert{
         margin-left: 5%;
-        font-size: medium;
+        font-size: large;
         text-transform:uppercase;
+        
     }
+ 
 } 

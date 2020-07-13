@@ -135,7 +135,7 @@ ul{
     margin-top: 30px;
 }
 #style-trend{
-    text-shadow: 2px 0px 10px rgb(200, 175, 214);
+    /* text-shadow: 2px 0px 10px rgb(200, 175, 214); */
     font-style: italic;
     font-weight: bolder;
     font-family:monospace;

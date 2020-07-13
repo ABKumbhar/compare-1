@@ -28,7 +28,7 @@ class CategoryDetails extends Component {
                 {results && results.map(result=>{
                     return(
                     <Container className="mt-5">
-                        <Link to={'/en/company/' + result.path} key={result.id}>
+                        <Link to={'/' + result.path} key={result.id}>
                         <Card className="text-left" key={result.id}>
                         <Row>
                         
