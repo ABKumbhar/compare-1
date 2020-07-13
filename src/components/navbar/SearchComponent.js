@@ -6,7 +6,7 @@ import Home from '../layout/home';
 import '../layout/homeContent.css';
 import axios from 'axios';
 import Categories from '../Categories/categories'
-
+import {connect} from 'react-redux'
 function SearchComponent(props) {
         
         return (
@@ -60,4 +60,9 @@ function SearchComponent(props) {
         )
     
 }
-export default SearchComponent;
+const mapStateToProps = state => {
+    return {
+      language_select: state.language.language_select
+    }
+  }
+export default connect(mapStateToProps)(SearchComponent);

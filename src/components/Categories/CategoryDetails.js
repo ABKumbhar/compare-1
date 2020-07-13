@@ -2,15 +2,18 @@ import React, { Component } from 'react'
 import axios from 'axios';
 import {Link} from 'react-router-dom'
 import {Card,Row,Col,Button,Image, Container} from 'react-bootstrap'
+import {connect} from 'react-redux'
 class CategoryDetails extends Component {
-     state={
-         loading:false,
-         results:[]
-     }
+    constructor(props){
+        super(props);
+        this.state = {loading:false,
+            results:[],};
+    } 
+   
      componentDidMount(){
         const slug= this.props.match.params.slug;
         console.log(slug)
-        axios.get(`https://aniket1999.pythonanywhere.com/en-gb/category/${slug}/division/`)
+        axios.get(`https://aniket1999.pythonanywhere.com/${this.props.language_select}/category/${slug}/division/`)
             .then(res=>{
                 console.log(res);
                 this.setState({
@@ -59,4 +62,9 @@ class CategoryDetails extends Component {
         )
     }
 }
-export default CategoryDetails ;
+const mapStateToProps = state => {
+    return {
+      language_select: state.language.language_select
+    }
+  }
+export default connect(mapStateToProps)(CategoryDetails) ;

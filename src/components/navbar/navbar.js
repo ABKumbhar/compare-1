@@ -3,7 +3,7 @@ import React, { Component,useState,useEffect } from 'react';
 import SignIn from './in';
 import SignOut from './out';
 import './navbar.css'
-import {Navbar,Form,FormControl,Button, NavItem} from 'react-bootstrap';
+import {Navbar,Form,FormControl,Button, NavItem,Dropdown} from 'react-bootstrap';
 
 import { logout } from '../../actions/auth';
 import {Input,Select} from 'reactstrap'
@@ -14,10 +14,10 @@ import HomeContent from '../layout/homeContent'
 import axios from 'axios'
 //import Select from 'react-select';
 import { connect } from 'react-redux';
-import Languages from './languages';
+import {eng,jap,dut,fre,ger} from '../../actions/lang'
 //import {DropdownInput} from 'react-dropdown-input';
 
-function Top(props,{language}) {
+function Top(props) {
    
 
     const [buttn,setbuttn] = useState('')
@@ -108,10 +108,27 @@ function Top(props,{language}) {
 
         return (
     <div>
-          
          <Navbar bg="light" variant="light" className="navbar" >
             <Navbar.Brand><Link to = "/" id="brand">Bonjour Techies</Link></Navbar.Brand>
                 {/* <Languages lang={language}/> */}
+                {props.language_select}
+
+        <Dropdown >
+        <Dropdown.Toggle variant="light" id="dropdown-basic">
+          Languages
+          <i className="fas fa-globe"></i>
+        </Dropdown.Toggle>     
+        <Dropdown.Menu>
+        <Dropdown.Item  onClick={props.eng} >English</Dropdown.Item>
+
+        <Dropdown.Item  onClick={props.fre} >French</Dropdown.Item>
+          <Dropdown.Item onClick={props.jap} >Japanese</Dropdown.Item>
+          <Dropdown.Item onClick={props.ger} >German</Dropdown.Item>
+
+          <Dropdown.Item onClick={props.dut}>Dutch</Dropdown.Item>
+        </Dropdown.Menu> 
+    
+      </Dropdown>
                 <Form inline  className="ml-auto input-style">
                 <Input type="text" list="cars" placeholder="Look for the best...." className="mr-sm-2 style-holder" onChange={e => setbuttn(e.target.value)} onKeyPress={handleKeyPress} />
                     <datalist id="cars">
@@ -146,8 +163,29 @@ function Top(props,{language}) {
         )
     
 }
-const mapStateToProps = (state) => ({
-    auth: state.auth,
-  });
+// const mapStateToProps = (state) => ({
+//     auth: state.auth,
+//   });
   
-export default connect(mapStateToProps, { logout })(Top);
+// export default connect(mapStateToProps, { logout })(Top);
+const mapStateToProps = state => {
+    return {
+      language_select: state.language.language_select
+    }
+  }
+  
+  const mapDispatchToProps = dispatch => {
+    return {
+      eng: () => dispatch(eng()),
+      jap: () => dispatch(jap()),
+      fre: () => dispatch(fre()),
+      ger: () => dispatch(ger()),
+      dut: () => dispatch(dut()),
+
+
+
+      
+    }
+  }
+  
+export default connect(mapStateToProps,mapDispatchToProps)(Top)

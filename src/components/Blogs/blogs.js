@@ -1,12 +1,19 @@
 import React, { Component } from 'react'
 import axios from 'axios';
 import BlogNonTrendingList from './blogNonTrendingList';
+import {connect} from 'react-redux'
 class Blogs extends Component {
-     state={
-        blogs:[],
-     }
+  constructor(props) {
+    super(props);
+ 
+    this.state = {
+      blogs: [],
+    };
+  }
+
+   
      componentDidMount(){
-         axios.get(`https://aniket1999.pythonanywhere.com/en/blogurl/`)
+         axios.get(`https://aniket1999.pythonanywhere.com/${this.props.language_select}/blogurl/`)
             .then(res=>{
                 // console.log(res)
                 this.setState({
@@ -28,4 +35,9 @@ class Blogs extends Component {
         )
     }
 }
-export default Blogs;
+const mapStateToProps = state => {
+  return {
+    language_select: state.language.language_select
+  }
+}
+export default connect(mapStateToProps)(Blogs);

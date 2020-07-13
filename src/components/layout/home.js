@@ -2,16 +2,21 @@ import React, { Component } from 'react';
 import {Jumbotron,Container, Image,Carousel} from'react-bootstrap';
 import './home.css';
 import axios from 'axios';
-
+import {connect} from 'react-redux'
 
 // Blogs and footer
 
 class Home extends Component {
-   state={
-       trendingBlogs:[]
-   }
+    constructor(props){
+        super(props);
+        this.state = {
+            trendingBlogs:[]
+
+        };
+    }
+  
    componentDidMount(){
-       axios.get(`https://aniket1999.pythonanywhere.com/en/blogurl/trending`)
+       axios.get(`https://aniket1999.pythonanywhere.com/${this.props.language_select}/blogurl/trending`)
        .then(res=>{
            // console.log(res)
            this.setState({
@@ -66,4 +71,9 @@ class Home extends Component {
         )
     }
 }
-export default Home;
+const mapStateToProps = state => {
+    return {
+      language_select: state.language.language_select
+    }
+  }
+export default connect(mapStateToProps)(Home);
