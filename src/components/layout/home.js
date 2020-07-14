@@ -25,6 +25,21 @@ class Home extends Component {
            console.log(this.state)
        });
    }
+
+   componentDidUpdate(prevProps){
+    if(this.props.language_select!==prevProps.language_select){
+     axios.get(`https://aniket1999.pythonanywhere.com/${this.props.language_select}/blogurl/trending/`)
+     .then(res=>{
+        //  console.log(data);
+         this.setState({
+            trendingBlogs:res.data
+        })
+         console.log(this.state)
+     });
+
+    }
+  }
+
     render() {
         return (
             <div>

@@ -33,7 +33,7 @@ function Top(props) {
 
     useEffect(() => {
         axios
-        .get(`https://aniket1999.pythonanywhere.com/en/division`)
+        .get(`https://aniket1999.pythonanywhere.com/${props.language_select}/division`)
         .then((res)=> 
            {console.log(res)
         setDivision(res.data)
@@ -46,10 +46,10 @@ function Top(props) {
         )
 
      ;
-      }, []);    
+      }, [props.language_select]);    
       useEffect(() => {
         axios
-        .get(`https://aniket1999.pythonanywhere.com/en/category`)
+        .get(`https://aniket1999.pythonanywhere.com/${props.language_select}/category`)
         .then((res)=> 
            {console.log(res)
         setcategory(res.data)
@@ -62,11 +62,11 @@ function Top(props) {
         )
 
      ;
-      }, []);    
+      }, [props.language_select]);    
 
       useEffect(() => {
         axios
-        .get(`https://aniket1999.pythonanywhere.com/en/company`)
+        .get(`https://aniket1999.pythonanywhere.com/${props.language_select}/company`)
         .then((res)=> 
            {console.log(res)
         setCompany(res.data)
@@ -79,11 +79,11 @@ function Top(props) {
         )
 
      ;
-      }, []);  
+      }, [props.language_select]);  
 
       useEffect(() => {
         axios
-        .get(`https://aniket1999.pythonanywhere.com/en/list?search=${buttn}`)
+        .get(`https://aniket1999.pythonanywhere.com/${props.language_select}/list?search=${buttn}`)
         .then((res)=> 
            {console.log(res)
         setItem(res.data)
@@ -96,7 +96,7 @@ function Top(props) {
         )
 
      ;
-      }, [buttn]);
+      }, [props.language_select,buttn]);
       
       
      const handleKeyPress = (target) => {

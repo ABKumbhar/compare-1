@@ -3,26 +3,30 @@ import axios from 'axios';
 import {Link} from 'react-router-dom'
 import {Card,Row,Col,Button,Image, Container} from 'react-bootstrap'
 import {connect} from 'react-redux'
+
 class CategoryDetails extends Component {
     constructor(props){
         super(props);
         this.state = {loading:false,
-            results:[],};
+            results:[],
+        };
     } 
-   
-     componentDidMount(){
-        const slug= this.props.match.params.slug;
+
+     componentDidMount(){const slug= this.props.match.params.slug;
+         
         console.log(slug)
         axios.get(`https://aniket1999.pythonanywhere.com/${this.props.language_select}/category/${slug}/division/`)
             .then(res=>{
                 console.log(res);
                 this.setState({
                     loading:true,
-                    results:res.data
+                    results:res.data,
+                   
                 });
                 console.log(this.state)
             })
     }
+
     render() {
         const results =this.state.results;
         return (
