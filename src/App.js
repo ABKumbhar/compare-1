@@ -27,13 +27,13 @@ class App extends Component {
       store.dispatch(loadUser());
     }  
     
-    handleClick=(lang)=>{
-      i18n.changeLanguage(lang);
-      this.setState({
-        language:lang
-      })
-      console.log(this.state)
-    }
+    // handleClick=(lang)=>{
+    //   i18n.changeLanguage(lang);
+    //   this.setState({
+    //     language:lang
+    //   })
+    //   console.log(this.state)
+    // }
   
 render(){
   const alertOptions = {

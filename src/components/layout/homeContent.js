@@ -27,6 +27,20 @@ class HomeContent extends Component {
              console.log(this.state)
          });
      }
+
+     componentDidUpdate(prevProps){
+       if(this.props.language_select!==prevProps.language_select){
+        axios.get(`https://aniket1999.pythonanywhere.com/${this.props.language_select}/division/trending/`)
+        .then(data=>{
+           //  console.log(data);
+            this.setState({
+               results:data.data
+            })
+            console.log(this.state)
+        });
+
+       }
+     }
    
     render() {
         const results = this.state.results;
