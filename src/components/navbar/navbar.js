@@ -132,12 +132,14 @@ function Top(props,{language}) {
                     </datalist>
                     {/* <Input type="search" placeholder="Look for the best...." className="mr-sm-2 input-style" onChange={e => setbuttn(e.target.value)} /> */}
                     <Link to={{pathname:'/search', aboutProps:item}}><Button variant="danger" id="button-style"><i className="fas fa-search"></i></Button></Link>
-           
-
+                     <Link to='/'>
+                     <Button variant="light" id="style-home">
+                        Home
+                     </Button>
+                    </Link>
                         <SignIn/>
                         
                 </Form>
-    
       
         </Navbar>
         

@@ -4,6 +4,10 @@
     margin-left: 10px;
     margin-top: 0%
 }
+mark{
+    background-color:rgb(227, 240, 253);
+    text-transform: uppercase;
+}
 
 #style-body{
     height:70%;

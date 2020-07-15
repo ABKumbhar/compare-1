@@ -76,7 +76,7 @@ render(){
           <Route path ="/register" component={Register}/>
           <Route path ="/login" component={SigninForm}/>
           
-          <Route path="/en/company/:slug" component={Details}></Route>
+          <Route path="/:slug" component={Details}></Route>
           
           <Route path="/search" component={SearchComponent}/>
 

@@ -117,8 +117,10 @@ a {
 li{
     list-style-type: none;
 }
-i{
+a i{
     padding: 5px;
+    font-size: large;
+    color: white;
 }
 #footer{
     padding:20px;
@@ -135,12 +137,12 @@ ul{
     margin-top: 30px;
 }
 #style-trend{
-    /* text-shadow: 2px 0px 10px rgb(200, 175, 214); */
-    font-style: italic;
-    font-weight: bolder;
+    text-shadow: 2px 0px 10px rgb(200, 175, 214);
+    /* font-style: italic; */
+    font-weight: bold;
     font-family:monospace;
     font-size: larger;
-    text-transform: capitalize;
+    text-transform: uppercase;
     text-decoration: underline;
 }
 

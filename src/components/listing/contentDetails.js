@@ -36,7 +36,8 @@ class Details extends Component {
             })
             console.log(this.state)
         })
-    }
+}
+
     executeOnClick(isExpanded) {
         console.log(isExpanded);
     }
@@ -55,7 +56,7 @@ class Details extends Component {
                     <div key={detail.id}>
                     <div className="top-detail">
                     <Row>
-                    <a  href={detail.url}>
+                    <a target='_blank'rel="noopener noreferrer" href={detail.url}>
                     <h3 id="name" dangerouslySetInnerHTML={ {__html:  detail.name} }></h3>
                     </a>
                      <hr/>
