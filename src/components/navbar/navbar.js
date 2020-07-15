@@ -8,7 +8,7 @@ import {Navbar,Form,FormControl,Button, NavItem,Dropdown} from 'react-bootstrap'
 import { logout } from '../../actions/auth';
 import {Input,Select} from 'reactstrap'
 import SearchComponent from './SearchComponent';
-import {Link ,Redirect} from 'react-router-dom'
+import {Link ,Redirect,withRouter} from 'react-router-dom'
 import { navigate } from "@reach/router"
 import HomeContent from '../layout/homeContent'
 import axios from 'axios'
@@ -80,7 +80,7 @@ function Top(props) {
 
      ;
       }, [props.language_select]);  
-
+ 
       useEffect(() => {
         axios
         .get(`https://aniket1999.pythonanywhere.com/${props.language_select}/list?search=${buttn}`)
@@ -188,4 +188,4 @@ const mapStateToProps = state => {
     }
   }
   
-export default connect(mapStateToProps,mapDispatchToProps)(Top)
+export default withRouter(connect(mapStateToProps,mapDispatchToProps)(Top))
