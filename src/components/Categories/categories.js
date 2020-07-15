@@ -4,13 +4,20 @@ import { Card } from 'react-bootstrap';
 import './categories.css';
 import CategoryTrendingList from './staticCategories';
 import CategoryNontrendingList from './CategoryList';
+import {connect} from 'react-redux'
 
 
 class Categories extends Component {
-    state={
-        categories:[],
-        isToggle:false,
-    }
+    constructor(props) {
+        super(props);
+     
+        this.state = {
+            categories:[],
+            isToggle:false,
+            };
+      }
+    
+  
     handleClick=(e)=>{
         e.preventDefault();
         this.setState({
@@ -18,7 +25,7 @@ class Categories extends Component {
         });
     }
     componentDidMount(){
-        axios.get(`https://aniket1999.pythonanywhere.com/en/category/`)
+        axios.get(`https://aniket1999.pythonanywhere.com/${this.props.language_select}/category/`)
          .then(res=>{
             //  console.log(res)
              this.setState({
@@ -27,6 +34,21 @@ class Categories extends Component {
              console.log(this.state)
          });
         }
+    
+    componentDidUpdate(prevProps){
+        if(this.props.language_select !== prevProps.language_select)
+        {
+            axios.get(`https://aniket1999.pythonanywhere.com/${this.props.language_select}/category/`)
+            .then(res=>{
+               //  console.log(res)
+                this.setState({
+                    categories:res.data,
+                })
+                console.log(this.state)
+            });
+    
+        }
+    }
         
          
     render() {
@@ -66,5 +88,9 @@ class Categories extends Component {
         )
     }
 }
-
-export default Categories;
+const mapStateToProps = state => {
+    return {
+      language_select: state.language.language_select
+    }
+  }
+export default connect(mapStateToProps)(Categories);
