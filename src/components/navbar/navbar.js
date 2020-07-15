@@ -3,21 +3,21 @@ import React, { Component,useState,useEffect } from 'react';
 import SignIn from './in';
 import SignOut from './out';
 import './navbar.css'
-import {Navbar,Form,FormControl,Button, NavItem} from 'react-bootstrap';
+import {Navbar,Form,FormControl,Button, NavItem,Dropdown} from 'react-bootstrap';
 
 import { logout } from '../../actions/auth';
 import {Input,Select} from 'reactstrap'
 import SearchComponent from './SearchComponent';
-import {Link ,Redirect} from 'react-router-dom'
+import {Link ,Redirect,withRouter} from 'react-router-dom'
 import { navigate } from "@reach/router"
 import HomeContent from '../layout/homeContent'
 import axios from 'axios'
 //import Select from 'react-select';
 import { connect } from 'react-redux';
-import Languages from './languages';
+import {eng,jap,dut,fre,ger} from '../../actions/lang'
 //import {DropdownInput} from 'react-dropdown-input';
 
-function Top(props,{language}) {
+function Top(props) {
    
 
     const [buttn,setbuttn] = useState('')
@@ -33,7 +33,7 @@ function Top(props,{language}) {
 
     useEffect(() => {
         axios
-        .get(`https://aniket1999.pythonanywhere.com/en/division`)
+        .get(`https://aniket1999.pythonanywhere.com/${props.language_select}/division`)
         .then((res)=> 
            {console.log(res)
         setDivision(res.data)
@@ -46,10 +46,10 @@ function Top(props,{language}) {
         )
 
      ;
-      }, []);    
+      }, [props.language_select]);    
       useEffect(() => {
         axios
-        .get(`https://aniket1999.pythonanywhere.com/en/category`)
+        .get(`https://aniket1999.pythonanywhere.com/${props.language_select}/category`)
         .then((res)=> 
            {console.log(res)
         setcategory(res.data)
@@ -62,11 +62,11 @@ function Top(props,{language}) {
         )
 
      ;
-      }, []);    
+      }, [props.language_select]);    
 
       useEffect(() => {
         axios
-        .get(`https://aniket1999.pythonanywhere.com/en/company`)
+        .get(`https://aniket1999.pythonanywhere.com/${props.language_select}/company`)
         .then((res)=> 
            {console.log(res)
         setCompany(res.data)
@@ -79,11 +79,11 @@ function Top(props,{language}) {
         )
 
      ;
-      }, []);  
-
+      }, [props.language_select]);  
+ 
       useEffect(() => {
         axios
-        .get(`https://aniket1999.pythonanywhere.com/en/list?search=${buttn}`)
+        .get(`https://aniket1999.pythonanywhere.com/${props.language_select}/list?search=${buttn}`)
         .then((res)=> 
            {console.log(res)
         setItem(res.data)
@@ -96,7 +96,7 @@ function Top(props,{language}) {
         )
 
      ;
-      }, [buttn]);
+      }, [props.language_select,buttn]);
       
       
      const handleKeyPress = (target) => {
@@ -108,10 +108,28 @@ function Top(props,{language}) {
 
         return (
     <div>
-          
          <Navbar bg="light" variant="light" className="navbar" >
             <Navbar.Brand><Link to = "/" id="brand">Bonjour Techies</Link></Navbar.Brand>
                 {/* <Languages lang={language}/> */}
+                {/* {props.language_select} */}
+
+        <Dropdown >
+        <Dropdown.Toggle variant="light" id="dropdown-basic" >
+        {props.language_select}
+          
+          <i className="fas fa-globe"></i>
+        </Dropdown.Toggle>     
+        <Dropdown.Menu>
+        <Dropdown.Item  onClick={props.eng} >English</Dropdown.Item>
+
+        <Dropdown.Item  onClick={props.fre} >French</Dropdown.Item>
+          <Dropdown.Item onClick={props.jap} >Japanese</Dropdown.Item>
+          <Dropdown.Item onClick={props.ger} >German</Dropdown.Item>
+
+          <Dropdown.Item onClick={props.dut}>Dutch</Dropdown.Item>
+        </Dropdown.Menu> 
+    
+      </Dropdown>
                 <Form inline  className="ml-auto input-style">
                 <Input type="text" list="cars" placeholder="Look for the best...." className="mr-sm-2 style-holder" onChange={e => setbuttn(e.target.value)} onKeyPress={handleKeyPress} />
                     <datalist id="cars">
@@ -148,8 +166,29 @@ function Top(props,{language}) {
         )
     
 }
-const mapStateToProps = (state) => ({
-    auth: state.auth,
-  });
+// const mapStateToProps = (state) => ({
+//     auth: state.auth,
+//   });
   
-export default connect(mapStateToProps, { logout })(Top);
+// export default connect(mapStateToProps, { logout })(Top);
+const mapStateToProps = state => {
+    return {
+      language_select: state.language.language_select
+    }
+  }
+  
+  const mapDispatchToProps = dispatch => {
+    return {
+      eng: () => dispatch(eng()),
+      jap: () => dispatch(jap()),
+      fre: () => dispatch(fre()),
+      ger: () => dispatch(ger()),
+      dut: () => dispatch(dut()),
+
+
+
+      
+    }
+  }
+  
+export default withRouter(connect(mapStateToProps,mapDispatchToProps)(Top))

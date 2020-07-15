@@ -5,19 +5,24 @@ import FeatureListing from './featureListing';
 import IntroDetails from './introDetails'
 import TableDetails from './tableDetails'
 import StarRatings from 'react-star-ratings';
+import {connect} from 'react-redux'
+import {Redirect} from 'react-router-dom';
 
 import {Container,Jumbotron,Image, Row,Col,Alert} from 'react-bootstrap';
 class Details extends Component {
+    constructor(props){
+        super(props);
+    }
     state={ 
     loading:false,
     data:[],
     headerData:[],
-    introData:[]
+    introData:[],
     }
     componentDidMount(){
        const slug = this.props.match.params.slug;
        console.log(slug);
-       axios.get(`https://aniket1999.pythonanywhere.com/en/division/${slug}/company/`)
+       axios.get(`https://aniket1999.pythonanywhere.com/${this.props.language_select}/division/${slug}/company/`)
         .then(res=>{
             // console.log(res);
             this.setState({
@@ -28,7 +33,7 @@ class Details extends Component {
             });
             console.log(this.state)
         });
-        axios.get(`https://aniket1999.pythonanywhere.com/en/division/${slug}/details/`)
+        axios.get(`https://aniket1999.pythonanywhere.com/${this.props.language_select}/division/${slug}/details/`)
         .then(res=>{
             this.setState({
              ...this.state,
@@ -36,17 +41,28 @@ class Details extends Component {
             })
             console.log(this.state)
         })
-}
+    }
 
+       
+ 
     executeOnClick(isExpanded) {
         console.log(isExpanded);
     }
     render() {
+        
+    
+           
+         
       const details =this.state.data;
       const header =this.state.headerData;
       const Intro= this.state.introData;
+      const bool = this.state.bool;
+      
+
+      
            return(
            <Container>
+
                 <IntroDetails Intro={Intro}/>
                    <TableDetails header={header} details={details}/> 
                
@@ -86,7 +102,7 @@ class Details extends Component {
                             name='rating'
                             starDimension="25px"
                             />
-</h4>
+                       </h4>
                         <a target='_blank' rel="noopener noreferrer" href={detail.url} as="h6">Go to website</a>
                         </div>
                         </Col>
@@ -121,4 +137,10 @@ class Details extends Component {
            )
     }
 }
-export default Details;
+
+const mapStateToProps = state => {
+    return {
+      language_select: state.language.language_select
+    }
+  }
+export default connect(mapStateToProps)(Details);

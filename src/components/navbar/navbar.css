@@ -18,6 +18,18 @@
     color:blue;
     font-weight: bold;
 }
+@media screen and (max-width:768px){
+    .input-style{
+        display:block
+      }
+    #style-home{
+        margin-left:30%;
+    }
+    #style-auth{
+        margin-left: 20%;
+        padding:5px;
+    }
+}
 
 @media screen and (max-width:665px){
      /* .navbar{
@@ -67,7 +79,9 @@
     #style-home{
         margin-left:105px;
         padding-top:5px;
-       
+    }
+    #dropdown-basic{
+        margin-left: 40%;
     }
 }
 @media screen and (max-width:375px){
@@ -84,6 +98,9 @@
         margin-left:78px;
         padding-top:5px;
        
+    }
+    #dropdown-basic{
+        margin-left: 40%;
     }
 }
 @media screen and (max-width:320px){
@@ -103,5 +120,8 @@
     #style-home{
         margin-left:50px;
         padding-top:5px;
+    }
+    #dropdown-basic{
+        margin-left: 35%;
     }
 }

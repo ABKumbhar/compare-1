@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
-import {BrowserRouter as Router,Route,Switch,Redirect} from'react-router-dom';
+
+import {BrowserRouter as Router,Route,Switch,Redirect, withRouter} from'react-router-dom';
 import Top from './components/navbar/navbar'; 
 import Register from './components/authentication/Register'
 import SigninForm from './components/authentication/signIn'
@@ -27,13 +28,13 @@ class App extends Component {
       store.dispatch(loadUser());
     }  
     
-    handleClick=(lang)=>{
-      i18n.changeLanguage(lang);
-      this.setState({
-        language:lang
-      })
-      console.log(this.state)
-    }
+    // handleClick=(lang)=>{
+    //   i18n.changeLanguage(lang);
+    //   this.setState({
+    //     language:lang
+    //   })
+    //   console.log(this.state)
+    // }
   
 render(){
   const alertOptions = {
@@ -51,23 +52,6 @@ render(){
       <Router>
         <Top/>
 
-
-        <Dropdown >
-        <Dropdown.Toggle variant="light" id="dropdown-basic">
-          Languages
-          <i className="fas fa-globe"></i>
-        </Dropdown.Toggle>     
-        <Dropdown.Menu>
-        <Dropdown.Item  onClick={()=>this.handleClick('en')} >English</Dropdown.Item>
-
-        <Dropdown.Item  onClick={()=>this.handleClick('fr')} >French</Dropdown.Item>
-          <Dropdown.Item onClick={()=>this.handleClick('ja')} >Japanese</Dropdown.Item>
-          <Dropdown.Item onClick={()=>this.handleClick('de')} >German</Dropdown.Item>
-
-          <Dropdown.Item onClick={()=>this.handleClick('nl')}>Dutch</Dropdown.Item>
-        </Dropdown.Menu> 
-    
-      </Dropdown>
        <Alerts/>
         
         <Switch>
@@ -78,7 +62,7 @@ render(){
           
           <Route path="/:slug" component={Details}></Route>
           
-          <Route path="/search" component={SearchComponent}/>
+          <Route exact path="/search" component={SearchComponent}/>
 
           <Route path="/category/:slug" component={CategoryDetails}/>
         </Switch>

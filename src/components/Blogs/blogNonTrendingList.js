@@ -8,7 +8,7 @@ import './blogs.css'
         
             return(
                 <div key={blog.id}>
-                    <a href={blog.url}>
+                 <a href={blog.url}>
                 <Row>
                     <Col xs={5} lg={4}>
                     <div>

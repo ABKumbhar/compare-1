@@ -5,16 +5,20 @@ import Home from './home';
 import './homeContent.css';
 
 import axios from 'axios';
-
+import {connect} from 'react-redux'
 import Categories from '../Categories/categories';
 import Blogs from '../Blogs/blogs';
 
 class HomeContent extends Component {
-    state={
-        results:[]
-    }
+  constructor(props){
+    super(props);
+    this.state = {
+      results : []
+    };
+  }
+   
     componentDidMount(){
-        axios.get(`https://aniket1999.pythonanywhere.com/en/division/trending/`)
+        axios.get(`https://aniket1999.pythonanywhere.com/${this.props.language_select}/division/trending/`)
          .then(data=>{
             //  console.log(data);
              this.setState({
@@ -22,6 +26,20 @@ class HomeContent extends Component {
              })
              console.log(this.state)
          });
+     }
+
+     componentDidUpdate(prevProps){
+       if(this.props.language_select!==prevProps.language_select){
+        axios.get(`https://aniket1999.pythonanywhere.com/${this.props.language_select}/division/trending/`)
+        .then(data=>{
+           //  console.log(data);
+            this.setState({
+               results:data.data
+            })
+            console.log(this.state)
+        });
+
+       }
      }
    
     render() {
@@ -113,4 +131,9 @@ class HomeContent extends Component {
         )
     }
 }
-export default HomeContent;
+const mapStateToProps = state => {
+  return {
+    language_select: state.language.language_select
+  }
+}
+export default connect(mapStateToProps)(HomeContent);

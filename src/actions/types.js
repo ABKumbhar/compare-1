@@ -8,3 +8,13 @@ export const REGISTER_SUCCESS = 'REGISTER_SUCCESS';
 export const REGISTER_FAIL = 'REGISTER_FAIL';
 export const GET_ERRORS = 'GET_ERRORS';
 export const CREATE_MESSAGE = 'CREATE_MESSAGE';
+export const LANG = 'LANG';
+export const GERMAN = 'GERMAN';
+export const ENGLISH = 'ENGLISH';
+export const JAPNESE = 'JAPNESE';
+export const DUTCH = 'DUTCH';
+export const FRENCH = 'FRENCH'
+
+
+
+
