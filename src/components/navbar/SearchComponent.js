@@ -1,14 +1,14 @@
 
-import React, { Component } from 'react';
+import React, { Component,useEffect } from 'react';
 import {Row,Col,Container, Card,Button,Jumbotron,Image,} from 'react-bootstrap';
-import {Link } from 'react-router-dom'
+import {Link ,Redirect, withRouter} from 'react-router-dom'
 import Home from '../layout/home';
 import '../layout/homeContent.css';
 import axios from 'axios';
 import Categories from '../Categories/categories'
 import {connect} from 'react-redux'
 function SearchComponent(props) {
-        
+ 
         return (
             <div>
        
@@ -65,4 +65,4 @@ const mapStateToProps = state => {
       language_select: state.language.language_select
     }
   }
-export default connect(mapStateToProps)(SearchComponent);
+export default withRouter(connect(mapStateToProps)(SearchComponent));

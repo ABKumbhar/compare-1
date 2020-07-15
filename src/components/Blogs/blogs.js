@@ -22,6 +22,18 @@ class Blogs extends Component {
                 console.log(this.state)
             });
      }
+     componentDidUpdate(prevProps){
+       if(prevProps.language_select !== this.props.language_select){
+      axios.get(`https://aniket1999.pythonanywhere.com/${this.props.language_select}/blogurl/`)
+         .then(res=>{
+             // console.log(res)
+             this.setState({
+               blogs:res.data
+             })
+             console.log(this.state)
+         });
+  }}
+
     render() {
       const blogs=this.state.blogs;
         return (

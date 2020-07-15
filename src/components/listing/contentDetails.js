@@ -6,6 +6,8 @@ import IntroDetails from './introDetails'
 import TableDetails from './tableDetails'
 import StarRatings from 'react-star-ratings';
 import {connect} from 'react-redux'
+import {Redirect} from 'react-router-dom';
+
 import {Container,Jumbotron,Image, Row,Col,Alert} from 'react-bootstrap';
 class Details extends Component {
     constructor(props){
@@ -15,7 +17,7 @@ class Details extends Component {
     loading:false,
     data:[],
     headerData:[],
-    introData:[]
+    introData:[],
     }
     componentDidMount(){
        const slug = this.props.match.params.slug;
@@ -40,15 +42,27 @@ class Details extends Component {
             console.log(this.state)
         })
     }
+
+       
+ 
     executeOnClick(isExpanded) {
         console.log(isExpanded);
     }
     render() {
+        
+    
+           
+         
       const details =this.state.data;
       const header =this.state.headerData;
       const Intro= this.state.introData;
+      const bool = this.state.bool;
+      
+
+      
            return(
            <Container>
+
                 <IntroDetails Intro={Intro}/>
                    <TableDetails header={header} details={details}/> 
                
