@@ -25,6 +25,8 @@ class HomeContent extends Component {
                 results:data.data
              })
              console.log(this.state)
+            console.log(this.props)
+
          });
      }
 
@@ -36,7 +38,7 @@ class HomeContent extends Component {
             this.setState({
                results:data.data
             })
-            console.log(this.state)
+            console.log(this.state);
         });
 
        }
@@ -61,7 +63,7 @@ class HomeContent extends Component {
                        <div id="style-trend"><mark>Trending today...</mark></div> 
                           {results && results.map(result =>{
                                return(
-                                <Link to={"/" +result.path} key={result.id}>
+                                <Link to={"/detail/" +result.path} key={result.id}>
                                          
                                         <Card className="text-left" key={result.id}>
                                         <hr></hr>

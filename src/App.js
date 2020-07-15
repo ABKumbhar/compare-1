@@ -60,7 +60,7 @@ render(){
           <Route path ="/register" component={Register}/>
           <Route path ="/login" component={SigninForm}/>
           
-          <Route path="/:slug" component={Details}></Route>
+          <Route path="/detail/:slug" component={Details}></Route>
           
           <Route exact path="/search" component={SearchComponent}/>
 

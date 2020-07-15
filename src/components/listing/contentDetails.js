@@ -12,13 +12,13 @@ import {Container,Jumbotron,Image, Row,Col,Alert} from 'react-bootstrap';
 class Details extends Component {
     constructor(props){
         super(props);
-    }
-    state={ 
+   this.state={ 
     loading:false,
     data:[],
     headerData:[],
     introData:[],
     }
+}
     componentDidMount(){
        const slug = this.props.match.params.slug;
        console.log(slug);

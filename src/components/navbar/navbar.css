@@ -80,9 +80,9 @@
         margin-left:105px;
         padding-top:5px;
     }
-    #dropdown-basic{
+    /* #dropdown-basic{
         margin-left: 40%;
-    }
+    } */
 }
 @media screen and (max-width:375px){
     #style-auth{
@@ -99,9 +99,9 @@
         padding-top:5px;
        
     }
-    #dropdown-basic{
+    /* #dropdown-basic{
         margin-left: 40%;
-    }
+    } */
 }
 @media screen and (max-width:320px){
     #style-auth{
@@ -121,7 +121,6 @@
         margin-left:50px;
         padding-top:5px;
     }
-    #dropdown-basic{
-        margin-left: 35%;
-    }
+  
+   
 }

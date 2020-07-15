@@ -14,6 +14,7 @@ import HomeContent from '../layout/homeContent'
 import axios from 'axios'
 //import Select from 'react-select';
 import { connect } from 'react-redux';
+import DivisionList from './divisionList';
 import {eng,jap,dut,fre,ger} from '../../actions/lang'
 //import {DropdownInput} from 'react-dropdown-input';
 
@@ -113,7 +114,7 @@ function Top(props) {
                 {/* <Languages lang={language}/> */}
                 {/* {props.language_select} */}
 
-        <Dropdown >
+        <Dropdown className="text-center" >
         <Dropdown.Toggle variant="light" id="dropdown-basic" >
         {props.language_select}
           
@@ -130,6 +131,7 @@ function Top(props) {
         </Dropdown.Menu> 
     
       </Dropdown>
+      <DivisionList/>
                 <Form inline  className="ml-auto input-style">
                 <Input type="text" list="cars" placeholder="Look for the best...." className="mr-sm-2 style-holder" onChange={e => setbuttn(e.target.value)} onKeyPress={handleKeyPress} />
                     <datalist id="cars">
