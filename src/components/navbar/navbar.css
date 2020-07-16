@@ -1,15 +1,71 @@
 #style-auth .nav-link{
-    display: inline-block;
+    display:inline-block;
 }
 
 #style-auth {
+ padding-left: 10px;
+}
+ #style-log .nav-link{
+    display:inline-block;
+} 
+
+#style-log {
+    text-align: center;
     padding-left: 10px;
 }
+#style-home{
+    color:blue;
+    font-weight: bold;
+}
+@media screen and (min-width:1024px){
+   #style-log .nav-link {
+        display:flex;
+   }
+        #style-explore{
+          margin-right: 20px;
+        }
+        .style-en{
+            margin-right: 30px;
+
+        }
+}
+ @media screen and (max-width:1022px) and  (min-width:768px){
+    .input-style{
+        display: inline-block;
+        position: relative;
+        top:10px;
+        left:20px
+      }
+    #style-home{
+        margin-left:0%;
+        position: relative;
+        top:-40px;
+        left:320px
+    }
+    .style-holder,#button-style{
+        position: relative;
+        left:0px
+    }
+    #style-auth{
+        margin-left: 0%;
+        position: relative;
+        top:-20px;
+        left:300px
+    }
+    #style-explore,.style-en{
+        position: relative;
+        top:30px;
+        left:-350px
+    }
+    #style-log{
+       position: relative;
+        top:-20px;
+        left:200px
+    }
+} 
 
 @media screen and (max-width:665px){
-     /* .navbar{
-          display:block
-     } */
+     
       .input-style{
         display:block
       }
@@ -43,19 +99,59 @@
 
 @media screen and (max-width:425px){
     #style-auth{
-        margin-left: 35%;
-        padding:0px;
-    }  
-}
-@media screen and (max-width:375px){
-    #style-auth{
+        margin-top:0px;
         margin-left: 32%;
         padding:0px;
     }  
+    #style-log{
+        margin-top:-10px;
+
+    }
+    #style-home{
+        margin-left:105px;
+        padding-top:5px;
+    }
+    /* #dropdown-basic{
+        margin-left: 40%;
+    } */
 }
-@media screen and (max-width:320px){
+@media screen and (max-width:375px){
     #style-auth{
+        margin-top:0px;
         margin-left: 30%;
         padding:0px;
+    } 
+    #style-log{
+        margin-top:-10px;
+
+    } 
+    #style-home{
+        margin-left:78px;
+        padding-top:5px;
+       
+    }
+    
+}
+@media screen and (max-width:320px){
+    .navbar{
+        display: inline-block;
+    }
+    #style-auth{
+        margin-left: 25%;
+        padding:0px;
+        margin-top:0px;
+
     }  
+     #style-auth .nav-link, #style-auth strong{
+        display:inline-block;
+        margin-left: -10px;
+    } 
+    #style-log{
+        margin-top:-10px;
+    }
+    #style-home{
+        margin-left:50px;
+        padding-top:5px;
+    }
+   
 }

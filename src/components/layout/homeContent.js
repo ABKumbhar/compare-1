@@ -25,6 +25,8 @@ class HomeContent extends Component {
                 results:data.data
              })
              console.log(this.state)
+            console.log(this.props)
+
          });
      }
 
@@ -36,7 +38,7 @@ class HomeContent extends Component {
             this.setState({
                results:data.data
             })
-            console.log(this.state)
+            console.log(this.state);
         });
 
        }
@@ -55,17 +57,13 @@ class HomeContent extends Component {
            
                 
                 <Container className="top-cont">
-                  <Row >
-                    <Col>
-                       <Categories/>
-                    </Col>
-                    </Row>
+                  <Categories/>
                    <Row id="lists">
                        <Col lg={9}>
-                       <div id="style-trend">Trending today...</div> 
+                       <div id="style-trend"><mark>Trending today...</mark></div> 
                           {results && results.map(result =>{
                                return(
-                                <Link to={'/en/company/' + result.path} key={result.id}>
+                                <Link to={"/detail/" +result.path} key={result.id}>
                                          
                                         <Card className="text-left" key={result.id}>
                                         <hr></hr>
@@ -112,15 +110,14 @@ class HomeContent extends Component {
                          <Col md={6}className="text-center">
                            Bonjour Techies
                            <div>
-                             <i className="far fa-envelope"></i>
-                             <i className="fas fa-phone"></i>
-                             <i className="fab fa-instagram"></i>
-                             <i className="fab fa-twitter"></i>
-                             <i className="fab fa-facebook-f"></i>
+                            <a href="https://www.linkedin.com/company/bonjourtechiesinc"><i class="fab fa-linkedin-in"></i></a>
+                             <a href="https://www.instagram.com/bonjour_techies/"><i className="fab fa-instagram"></i></a>
+                             <a href="https://twitter.com/BonjourTechies"><i className="fab fa-twitter"></i></a>
+                             <a href="https://www.facebook.com/bonjourtechies/"><i className="fab fa-facebook-f"></i></a>
                          </div>
                           <ul className="copyright">
                              <li>&copy; Untitled</li>
-                             <li>Website: <a href="https://bonjourtechies.com/" className="text-danger">Bonjour Techies</a></li>
+                             <li>Website: <a href="https://bonjourtechies.com/" className="text-danger"><strong>Bonjour Techies</strong></a></li>
                           </ul>
                          </Col >
                          <Col md={6} id="footer-text" >

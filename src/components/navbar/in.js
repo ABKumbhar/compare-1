@@ -1,5 +1,5 @@
 import React,{ Component } from 'react'
-import {Nav} from 'react-bootstrap';
+import {Nav,Button} from 'react-bootstrap';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import {Link} from 'react-router-dom'
@@ -23,7 +23,7 @@ export class SignIn extends Component {
 
     
     const authLinks = (
-            <div>
+            <div id="style-log">
             <strong>{user ? `Welcome ${user.first_name}` : ''}</strong>
            
 
@@ -39,7 +39,7 @@ export class SignIn extends Component {
       const guestLinks = (
           <div id="style-auth">
             <Link to="/register" >
-              Register/Login
+             <Button variant="light" >Register/Login</Button>
             </Link>
             {this.state.timePassed ? <ModalComponent isOpen={true}/>:<div></div>}
             </div>

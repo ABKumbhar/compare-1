@@ -17,12 +17,9 @@ const CategoryTrendingList=({categories})=> {
           <Row>
             { categories && categories.map(category =>{
                 return(
-                   
-                     
-                      <Col md={6} lg={3} key={category.id}>
-                        {category.trending ?
+                    <Col md={6} lg={3} key={category.id}>
+                      {category.trending ?
                       <Link to={'/category/' +category.path}>
-                      
                        <Card id="style-body">
                          <Row>
                            <Col xs={10} md={7}lg={9}>
