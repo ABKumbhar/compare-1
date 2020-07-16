@@ -3,7 +3,7 @@ import React, { Component,useState,useEffect } from 'react';
 import SignIn from './in';
 import SignOut from './out';
 import './navbar.css'
-import {Navbar,Form,FormControl,Button, NavItem,Dropdown} from 'react-bootstrap';
+import {Navbar,Form,FormControl,Button, NavItem,Dropdown,Row,Col} from 'react-bootstrap';
 
 import { logout } from '../../actions/auth';
 import {Input,Select} from 'reactstrap'
@@ -113,25 +113,6 @@ function Top(props) {
             <Navbar.Brand><Link to = "/" id="brand">Bonjour Techies</Link></Navbar.Brand>
                 {/* <Languages lang={language}/> */}
                 {/* {props.language_select} */}
-
-        <Dropdown className="text-center" >
-        <Dropdown.Toggle variant="light" id="dropdown-basic" >
-        {props.language_select}
-          
-          <i className="fas fa-globe"></i>
-        </Dropdown.Toggle>     
-        <Dropdown.Menu>
-        <Dropdown.Item  onClick={props.eng} >English</Dropdown.Item>
-
-        <Dropdown.Item  onClick={props.fre} >French</Dropdown.Item>
-          <Dropdown.Item onClick={props.jap} >Japanese</Dropdown.Item>
-          <Dropdown.Item onClick={props.ger} >German</Dropdown.Item>
-
-          <Dropdown.Item onClick={props.dut}>Dutch</Dropdown.Item>
-        </Dropdown.Menu> 
-    
-      </Dropdown>
-      <DivisionList/>
                 <Form inline  className="ml-auto input-style">
                 <Input type="text" list="cars" placeholder="Look for the best...." className="mr-sm-2 style-holder" onChange={e => setbuttn(e.target.value)} onKeyPress={handleKeyPress} />
                     <datalist id="cars">
@@ -160,6 +141,30 @@ function Top(props) {
                         <SignIn/>
                         
                 </Form>
+       <Row>
+         <Col>
+         <DivisionList/>
+      </Col>
+      <Col>
+      <Dropdown className="text-center style-en"  >
+        <Dropdown.Toggle variant="light" id="dropdown-basic" >
+        {props.language_select}
+          
+          <i className="fas fa-globe"></i>
+        </Dropdown.Toggle>     
+        <Dropdown.Menu>
+        <Dropdown.Item  onClick={props.eng} >English</Dropdown.Item>
+
+        <Dropdown.Item  onClick={props.fre} >French</Dropdown.Item>
+          <Dropdown.Item onClick={props.jap} >Japanese</Dropdown.Item>
+          <Dropdown.Item onClick={props.ger} >German</Dropdown.Item>
+
+          <Dropdown.Item onClick={props.dut}>Dutch</Dropdown.Item>
+        </Dropdown.Menu> 
+    
+      </Dropdown>
+      </Col>
+          </Row>     
       
         </Navbar>
         

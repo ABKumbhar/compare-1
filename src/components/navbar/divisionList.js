@@ -21,7 +21,7 @@ export default class DivisionList extends Component {
             <div>
                 {divisions && divisions.map(division =>{
                     return(
-                     <Dropdown key={division.id} className="text-center" >
+                     <Dropdown key={division.id} className="text-center" id="style-explore">
                      <Dropdown.Toggle variant="light" >
                        Explore
                      </Dropdown.Toggle>
