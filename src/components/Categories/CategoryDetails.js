@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios';
-import {Link} from 'react-router-dom'
+import {Link, Redirect} from 'react-router-dom'
 import {Card,Row,Col,Button,Image, Container} from 'react-bootstrap'
 import {connect} from 'react-redux'
 
@@ -31,7 +31,11 @@ class CategoryDetails extends Component {
 
 
     render() {
+        if (this.state.results.length == 0) {
+             return <Redirect to="/" />}        
         const results =this.state.results;
+        
+
         return (
             <div>
 

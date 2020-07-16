@@ -21,7 +21,7 @@ function SearchComponent(props) {
                     
                            {props.location.aboutProps && props.location.aboutProps.length ? props.location.aboutProps.map(result =>{
                                return(
-                                <Link to={'/en/company/' + result.path} key={result.id}>
+                                <Link to={'detail/' + result.path} key={result.id}>
                                     
                                         <Card className="text-left" key={result.id}>
                                         <Row>
