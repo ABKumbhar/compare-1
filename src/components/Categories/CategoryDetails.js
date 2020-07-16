@@ -31,8 +31,6 @@ class CategoryDetails extends Component {
 
 
     render() {
-        if (this.state.results.length == 0) {
-             return <Redirect to="/" />}        
         const results =this.state.results;
         
 

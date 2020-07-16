@@ -49,5 +49,4 @@ const CategoryTrendingList=({categories})=> {
         </div>
     )
 }
-
 export default CategoryTrendingList;

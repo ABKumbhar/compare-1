@@ -44,7 +44,7 @@ class DivisionList extends Component {
                      </Dropdown.Toggle>
                    
                      <Dropdown.Menu>
-                     <Dropdown.Item > <Link to = {'detail/' + division.path} >{division.headline} </Link></Dropdown.Item>
+                     <Dropdown.Item > <Link  to = {'detail/' + division.path} >{division.headline} </Link></Dropdown.Item>
                     </Dropdown.Menu>
                  
                    </Dropdown>
