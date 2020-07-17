@@ -153,13 +153,14 @@ function Top(props) {
           <i className="fas fa-globe"></i>
         </Dropdown.Toggle>     
         <Dropdown.Menu>
-        <Dropdown.Item  onClick={props.eng} >English</Dropdown.Item>
+        <Dropdown.Item  onClick={props.eng} > <Link to="/">English</Link></Dropdown.Item>
 
-        <Dropdown.Item  onClick={props.fre} >French</Dropdown.Item>
-          <Dropdown.Item onClick={props.jap} >Japanese</Dropdown.Item>
-          <Dropdown.Item onClick={props.ger} >German</Dropdown.Item>
+<Dropdown.Item  onClick={props.fre} ><Link to="/">French</Link></Dropdown.Item>
+  <Dropdown.Item onClick={props.jap} ><Link to="/">Japanese</Link></Dropdown.Item>
+  <Dropdown.Item onClick={props.ger} ><Link to="/">German</Link></Dropdown.Item>
 
-          <Dropdown.Item onClick={props.dut}>Dutch</Dropdown.Item>
+  <Dropdown.Item onClick={props.dut}><Link to="/">Dutch</Link></Dropdown.Item>
+
         </Dropdown.Menu> 
     
       </Dropdown>
